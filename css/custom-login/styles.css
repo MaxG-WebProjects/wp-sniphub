@@ -1,0 +1,301 @@
+/* Add a Custom Background */
+body.login {
+  background: rgb(0,16,109);
+  background: linear-gradient(35deg, rgba(0,16,109,1) 35%, rgba(3,63,255,1) 100%);
+  /*background-image: url('img/background.svg');*/
+  background-size: cover;  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Replace the WordPress Logo With a Custom Logo */
+.login h1 a {
+  background-image: url('img/max-gremez-logo.svg');
+  background-size: 298px 47px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto 25px;
+  padding: 0;
+  width: 300px;
+}
+
+/* Customize the Look of the Login Form */
+/* Background color */
+#loginform {
+  background: rgb(0,16,109);
+  border: solid 1px #01FFB3; /* border-color: #01FFB3; */
+  -webkit-border-radius: 10px;
+}
+
+/* Textes */
+.login label {
+  font-size: 12px;
+  color: #FFF;
+}
+
+.login input[type="text"]{
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: #FFF;
+  border-color: #2b4c65 !important;
+  -webkit-border-radius: 4px;
+}
+
+.login input[type="password"]{
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: #FFF;
+  border-color: #2b4c65 !important;
+  -webkit-border-radius: 4px;
+}
+
+/* Customize the input border color of the Login Form */
+body.login div#login form#loginform input#user_login {
+	border: 1px solid  #dca527;
+}
+body.login div#login form#loginform input#user_pass {
+	border: 1px solid #dca527;
+}
+
+input[type="checkbox"] {
+	border: 1px solid #033fff;
+}
+
+/* Customize the 'eye' icon of the Login Form */
+.wp-core-ui .button, .wp-core-ui .button-secondary {
+  color: #033fff;
+}
+/* Color on hover > modifier la langue */
+.wp-core-ui .button.hover,
+.wp-core-ui .button:hover,
+.wp-core-ui .button-secondary:hover {
+  background-color: #033fff !important;
+  color: #fff;
+}
+
+/* Customize the input text color of the Login Form */
+input[type="text"], input[type="password"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"], select, textarea {
+  color: #00106D;
+}
+
+/* Customize the 'Forget me not' input */
+.login form .forgetmenot {
+  float: unset; /* ex : left */
+}
+
+/* Center the button 'Se connecter' */
+#login form p.submit {
+  display: grid;  
+  justify-content: center;
+  padding: 1em 0em 1em 0em;
+}
+
+/* Customize the button of the Login Form */
+.login .button-primary {
+  width: 120px;
+  float: right;
+  background-color: #FFF !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#FFF));
+  background: -webkit-linear-gradient(top, #FFF, #FFF);
+  background: -moz-linear-gradient(top, #FFF, #FFF);
+  background: -ms-linear-gradient(top, #FFF, #FFF);
+  background: -o-linear-gradient(top, #FFF, #FFF);
+  background-image: -ms-linear-gradient(top, #FFF 0%, #FFF 100%);
+  font-weight: light;
+  color: #2b4c65;
+  text-shadow: none;
+  -webkit-border-radius: 20px;
+  border: none;
+  box-shadow: none;
+}
+
+.login .button-primary:hover {
+  background-color: #033fff !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#033fff), to(#033fff));
+  background: -webkit-linear-gradient(top, #033fff, #033fff);
+  background: -moz-linear-gradient(top, #033fff, #033fff);
+  background: -ms-linear-gradient(top, #033fff, #033fff);
+  background: -o-linear-gradient(top, #033fff, #033fff);
+  background-image: -ms-linear-gradient(top, #033fff 0%, #033fff 100%);
+  color: #fff;
+  text-shadow: none;
+  -webkit-border-radius: 20px;
+  border: none;
+  box-shadow: none;
+}
+
+.login .button-primary:active {
+  background-color: #033fff !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#033fff), to(#033fff));
+  background: -webkit-linear-gradient(top, #033fff, #033fff);
+  background: -moz-linear-gradient(top, #033fff, #033fff);
+  background: -ms-linear-gradient(top, #033fff, #033fff);
+  background: -o-linear-gradient(top, #033fff, #033fff);
+  background-image: -ms-linear-gradient(top, #033fff 0%, #033fff 100%);
+  color: #fff;
+  text-shadow: none;
+  -webkit-border-radius: 20px;
+  border: none;
+  box-shadow: none;
+}
+
+/* Customisation > Mot de passe oublié ? */
+.login #nav {
+  text-align: center;
+}
+
+.login #nav a, .login #backtoblog a {
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: #FFF !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#FFF));
+  background: -webkit-linear-gradient(top, #FFF, #FFF);
+  background: -moz-linear-gradient(top, #FFF, #FFF);
+  background: -ms-linear-gradient(top, #FFF, #FFF);
+  background: -o-linear-gradient(top, #FFF, #FFF);
+  background-image: -ms-linear-gradient(top, #FFF 0%, #FFF 100%);
+  font-weight: light;
+  color: #2b4c65;
+  text-shadow: none;
+  -webkit-border-radius: 20px;
+  border: none;
+  box-shadow: none;
+}
+.login #nav a:hover {
+  text-align: center;
+  background-color: #033fff !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#033fff), to(#033fff));
+  background: -webkit-linear-gradient(top, #033fff, #033fff);
+  background: -moz-linear-gradient(top, #033fff, #033fff);
+  background: -ms-linear-gradient(top, #033fff, #033fff);
+  background: -o-linear-gradient(top, #033fff, #033fff);
+  background-image: -ms-linear-gradient(top, #033fff 0%, #033fff 100%);
+  color: #fff;
+  text-shadow: none;
+  -webkit-border-radius: 20px;
+  border: none;
+  box-shadow: none;
+}
+
+/* Customisation du bouton 'Générer un mot de passe' */
+.wp-core-ui .button.button-large, .wp-core-ui .button-group.button-large .button {
+  width: 176px;
+}
+
+/* Customisation > Politique de confidentialité | RGPD */
+.privacy-policy-page-link .privacy-policy-link {
+  color: #FFF;
+  text-decoration: none;
+}
+.privacy-policy-page-link .privacy-policy-link:hover {
+  color: #dca527;
+  text-decoration: none;
+}
+
+/* Remove the “Back to” Link */
+p#backtoblog {
+  display: none;
+}
+
+/* Customisation du message */
+/* 'Votre déconnexion a bien été effectuée' */
+#login-message.notice.notice-info.message {
+  color: #fff;
+}
+
+/* Customisation des messages d'erreur */
+/* Mauvais login > 'Bah alors tu te trompes' */
+.login .message, .login .success, .login #login_error {
+  color: #000000;
+  text-align: center;
+  background: #033fff;
+  border-radius: 1.5em;
+  border-left: none;
+}
+
+/* Customisation de la séparation '--- OR ---' entre 'Se connecter' et 'Login with your password' */
+.itsec-pwls-login-fallback__or {
+  margin-bottom: 1em !important;
+}
+
+/* Customisation popup 'Authentication Code' (Mot de passe perdu) */
+.login form {
+  background: #00106D;
+  border-color: #01FFB3;
+  -webkit-border-radius: 10px;
+}
+
+/* Customisation textes popup 'Authentication Code' */
+#login form p {
+  color: #F2F2F2; /*ex: #00E1FF;*/
+}
+
+/* Customisation de l'image d'enveloppe iThemes
+* via https://askcodez.com/masquer-le-src-de-limage-dans-un-img-element-mais-de-montrer-son-image-darriere-plan.html
+*/
+img.itsec-pwls-login__logo {
+  content: url('img/logo-sigle.svg');
+  background-repeat: no-repeat;
+  width: 116; /*or your image's width*/
+  height: 116; /*or your image's height*/
+}
+
+/* Customisation texte + bouton 'Email Magic Link' */
+a.itsec-pwls-login__link {
+  color: #FFF;
+  background: #00106D;
+  -webkit-border-radius: 20px;
+  border: solid 1px #FFF;
+  box-shadow: none;
+}
+a.itsec-pwls-login__link:hover {
+  /*color: #2b4c65;*/
+  background-color: #033FFF;
+  border-color: #033FFF;
+}
+
+/* Customisation bouton 'Send' du 'Email Magic Link' */
+button.itsec-pwls-login__submit {
+  color: #FFF;
+  background: rgba(0, 16, 109, 0);
+  -webkit-border-radius: 20px;
+  border: solid 1px #FFF;
+  box-shadow: none;
+}
+button.itsec-pwls-login__submit:hover {
+  /*color: #2b4c65;*/
+  background-color: #033FFF;
+}
+
+/* Customisation couleur texte 'Login with username and password' */
+a.itsec-pwls-login-fallback__link {
+  color: #FFF;
+  background: #00106D;
+  -webkit-border-radius: 20px;
+  border: solid 1px #FFF;
+  font-size: 1.2em;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+a.itsec-pwls-login-fallback__link:hover {
+  /*color: #FFF;*/
+  background: #033FFF;
+  border-color: #033FFF;
+}
+
+/* Customisation 'Authentification Code' > Email / Backup Authentification Codes */
+::marker {
+  color: #FFF;
+}
+.itsec-backup-methods ul li a {
+  color: #FFF;
+  text-decoration: none;
+}
+.itsec-backup-methods ul li a:hover {
+  color: #dca527;
+  text-decoration: none;
+}
