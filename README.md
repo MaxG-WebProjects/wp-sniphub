@@ -39,18 +39,19 @@ L’objectif est d’assurer :
 
 ## Structure du plugin
 
-greenlightaddon/
-├── src/
-│   └── blocks/
-│       └── example/
-│           ├── edit.js
-│           ├── inspector.js
-│           ├── save.js
-│           └── index.js
-├── build/                     # (Ignoré par Git, généré via npm run build)
-├── greenlightaddon.php
-├── package.json
-└── .gitignore
+- greenlightaddon/
+  - src/
+    - blocks/
+      - example/
+        - edit.js
+        - inspector.js
+        - save.js
+        - index.js
+  - build/
+  - greenlightaddon.php
+  - package.json
+  - .gitignore
+
 
  
 ---
