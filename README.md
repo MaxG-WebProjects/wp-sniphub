@@ -39,9 +39,11 @@ L’objectif est d’assurer :
 
 ## Structure du plugin
 
-├── : Dossier ou fichier avec des éléments suivants.
-└── : Dernier dossier ou fichier d'une liste.
-│    : Ligne verticale pour indiquer la hiérarchie.
+```
+structure/
+├── file.php
+└── readme.md
+```
 
 
 
