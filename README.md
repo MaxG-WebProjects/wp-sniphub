@@ -100,33 +100,34 @@ wp-sniphub/
 ---
 
 ## Ordre d’exécution (priorités)
-  ┌──────────────────────────┬──────────┬───────────────────────────────────────────┐
-  │ Modules                  │ Priorité │ Rôle                                      │
-  ├──────────────────────────┼──────────┼───────────────────────────────────────────┤
-  │ setup.php                │ 5        │ Initialisation                            │
-  │ security.php             │ 10       │ Améliorations de sécurité                 │
-  │ custom-login.php         │ 45       │ Personnalisation du login                 │
-  │ custom-admin.php         │ 50       │ Personnalisation de l'admin               │
-  │ custom-favicon.php       │ 15       │ Personnalisation du favicon               │
-  │ hooks.php                │ 45       │ Hooks personnalisés (actions/filters)     │
-  │ scripts.php              │ 40       │ Chargement CSS/JS                         │
-  │ performance.php          │ 45       │ Améliorations des performances            │
-  │ cleanup.php              │ 35       │ Nettoyage WordPress                       │
-  │ custom-post-types.php    │ 30       │ Déclaration des Custom Post Types         │
-  │ taxonomies.php           │ 20       │ Déclaration des taxonomies                │
-  │ media-setup.php          │ 45       │ Ajout de types de média (svg, json)       │
-  │ image-size.php           │ 55       │ Ajout de tailles d'images                 │
-  │ shortcodes.php           │ 25       │ Déclaration des code courts               │
-  │ publications.php         │ 25       │ Ajout de fonctions aux articles           │
-  │ woocommerce.php          │ 25       │ Ajout de fonctions à Woocommerce          │
-  │ gravity-forms.php        │ 45       │ Personnalisation de Gravity Forms         │
-  │ greenshift.php           │ 35       │ Personnalisation du plugin Greenshift     │
-  │ helpers.php              │          │                                           │
-  │                          │          │                                           │
-  │                          │          │                                           │  
-  │                          │          │                                           │
-# └──────────────────────────┴──────────┴───────────────────────────────────────────┘
----
+```
+┌──────────────────────────┬──────────┬───────────────────────────────────────────┐
+│ Modules                  │ Priorité │ Rôle                                      │
+├──────────────────────────┼──────────┼───────────────────────────────────────────┤
+│ setup.php                │ 5        │ Initialisation                            │
+│ security.php             │ 10       │ Améliorations de sécurité                 │
+│ custom-login.php         │ 45       │ Personnalisation du login                 │
+│ custom-admin.php         │ 50       │ Personnalisation de l'admin               │
+│ custom-favicon.php       │ 15       │ Personnalisation du favicon               │
+│ hooks.php                │ 45       │ Hooks personnalisés (actions/filters)     │
+│ scripts.php              │ 40       │ Chargement CSS/JS                         │
+│ performance.php          │ 45       │ Améliorations des performances            │
+│ cleanup.php              │ 35       │ Nettoyage WordPress                       │
+│ custom-post-types.php    │ 30       │ Déclaration des Custom Post Types         │
+│ taxonomies.php           │ 20       │ Déclaration des taxonomies                │
+│ media-setup.php          │ 45       │ Ajout de types de média (svg, json)       │
+│ image-size.php           │ 55       │ Ajout de tailles d'images                 │
+│ shortcodes.php           │ 25       │ Déclaration des code courts               │
+│ publications.php         │ 25       │ Ajout de fonctions aux articles           │
+│ woocommerce.php          │ 25       │ Ajout de fonctions à Woocommerce          │
+│ gravity-forms.php        │ 45       │ Personnalisation de Gravity Forms         │
+│ greenshift.php           │ 35       │ Personnalisation du plugin Greenshift     │
+│ helpers.php              │ 20       │ Divers                                    │
+│                          │          │                                           │
+│                          │          │                                           │  
+│                          │          │                                           │
+└──────────────────────────┴──────────┴───────────────────────────────────────────┘
+```
 
 ## Sécurité appliquée
 
