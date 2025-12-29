@@ -1,3 +1,4 @@
+![WPSnipHub](assets/banner.png)
 # WP-SnipHub
 Central hub for snippets and utility functions for WordPress sites.
 
