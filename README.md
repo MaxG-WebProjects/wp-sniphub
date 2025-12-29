@@ -131,18 +131,18 @@ wp-sniphub/
 
 ## Sécurité appliquée
 
-Blocage de l’accès direct à tous les fichiers (if ( ! defined( 'ABSPATH' ) ) exit;)
-Suppression des emojis et balises inutiles (cleanup.php)
-Désactivation de l’éditeur de fichiers dans l’admin (security.php)
-Masquage de la version WordPress
+- Blocage de l’accès direct à tous les fichiers (if ( ! defined( 'ABSPATH' ) ) exit;)
+- Suppression des emojis et balises inutiles (cleanup.php)
+- Désactivation de l’éditeur de fichiers dans l’admin (security.php)
+- Masquage de la version WordPress
 
 ---
 
 ## Bonnes pratiques
 
-Documenter chaque module dans inc/_docs.php
-Toujours utiliser le hook theme_loaded pour centraliser le chargement
-Gérer l’ordre avec des priorités cohérentes (5 → 100)
-Activer/désactiver les modules via $theme_modules plutôt que supprimer du code
+- Documenter chaque module dans inc/_docs.php
+- Toujours utiliser le hook theme_loaded pour centraliser le chargement
+- Gérer l’ordre avec des priorités cohérentes (5 → 100)
+- Activer/désactiver les modules via $theme_modules plutôt que supprimer du code
 
 ---
