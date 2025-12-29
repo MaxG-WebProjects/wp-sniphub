@@ -39,27 +39,9 @@ L’objectif est d’assurer :
 
 ## Structure du plugin
 
-
----
-
-### **Explications**
-1. **Utilise des blocs de code** avec ````text```` pour afficher une police à chasse fixe (comme dans un terminal).
-2. **Symboles utilisés** :
-   - `├──` : Dossier ou fichier avec des éléments suivants.
-   - `└──` : Dernier dossier ou fichier d'une liste.
-   - `│   ` : Ligne verticale pour indiquer la hiérarchie.
-3. **Commentaires** : Ajoute des descriptions après `#` pour expliquer chaque fichier/dossier.
-
----
-
-### **Résultat visuel**
-Cela affichera une arborescence claire et lisible, comme dans un terminal.
-
----
-**Astuce** :
-- Pour générer automatiquement cette structure en Markdown, tu peux utiliser l'outil [`tree`](https://linux.die.net/man/1/tree) sous Linux/macOS :
-  ```bash
-  tree -I 'node_modules|build' --dirsfirst -L 4
+├── : Dossier ou fichier avec des éléments suivants.
+└── : Dernier dossier ou fichier d'une liste.
+│    : Ligne verticale pour indiquer la hiérarchie.
 
 
 
