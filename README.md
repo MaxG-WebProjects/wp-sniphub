@@ -39,17 +39,53 @@ L’objectif est d’assurer :
 
 ## Structure du plugin
 
-greenlightaddon/
-├── src/
-│   └── blocks/
-│       └── example/
-│           ├── edit.js          # Block editor component
-│           ├── inspector.js     # Block inspector controls
-│           ├── save.js          # Block save component
-│           └── index.js         # Block registration
-├── build/                       # Compiled assets
-├── greenlightaddon.php         # Main plugin file
-└── package.json                # Dependencies and scripts
+wp-sniphub/
+│
+├── wp-sniphub.php
+├── inc/
+│   ├── setup.php
+│   ├── security.php
+│   ├── custom-login.php
+│   ├── custom-admin.php
+│   ├── custom-favicon.php
+│   ├── hooks.php
+│   ├── scripts.php
+│   ├── performance.php
+│   ├── cleanup.php
+│   ├── custom-post-types.php
+│   ├── taxonomies.php
+│   ├── media-setup.php
+│   ├── image-size.php
+│   ├── shortcodes.php
+│   ├── publications.php
+│   ├── woocommerce.php
+│   ├── gravity-forms.php
+│   ├── greenshift.php
+│   └── helpers.php
+├── css/
+│ ├── custom-login/
+│ │ └── styles.css
+│ └── custom-admin-colors/
+│ │ └── color-scheme.css
+│ └── admin/
+│   └── wpsh-admin.css
+├── img/
+│   └── icon.svg
+│   └── gravatar-icon-290x290px.png
+│   └── dashboard-logo.svg
+├── favicons/
+│   └── favicon.ico
+│   └── favicon.svg
+│   └── favicon-16x16.png
+│   └── favicon-32x32.png
+│   └── favicon-96x96.png
+│   └── apple-touch-icon.png
+│   └── web-app-manifest-192x192.png
+│   └── web-app-manifest-512x512.png
+│   └── safari-pinned-tab.svg
+│   └── site.webmanifest
+├── _docs.php # Documentation interne (non chargé)
+├── README.md # Documentation interne (non chargé)
  
 ---
 
