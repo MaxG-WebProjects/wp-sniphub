@@ -75,20 +75,23 @@ wp-sniphub/
 │   └── custom-admin-colors/
 │       └── color-scheme.css
 │   
-└── img/
-    ├── icon.svg
-    ├── gravatar-icon-290x290px.png
-    └── favicons/
-        ├── favicon.ico
-        ├── favicon.svg
-        ├── favicon-16x16.png
-        ├── favicon-32x32.png
-        ├── favicon-96x96.png
-        ├── apple-touch-icon.png
-        ├── web-app-manifest-192x192.png
-        ├── web-app-manifest-512x512.png
-        ├── safari-pinned-tab.svg
-        └── site.webmanifest
+├── img/
+│   ├── icon.svg
+│   ├── gravatar-icon-290x290px.png
+│   └── favicons/
+│       ├── favicon.ico
+│	├── favicon.svg
+│	├── favicon-16x16.png
+│	├── favicon-32x32.png
+│	├── favicon-96x96.png
+│	├── apple-touch-icon.png
+│	├── web-app-manifest-192x192.png
+│	├── web-app-manifest-512x512.png
+│	├── safari-pinned-tab.svg
+│	└── site.webmanifest
+│   
+├── _docs.php # Documentation interne (non chargé)
+└── README.md # Documentation interne (non chargé)
 ```
 
 
