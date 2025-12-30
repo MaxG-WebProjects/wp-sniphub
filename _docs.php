@@ -27,7 +27,7 @@
   * │   ├── gravity-forms.php
   * │   ├── greenshift.php
   * │   └── helpers.php
-  * ├── css/                   -> Contient tous les modules PHP
+  * ├── css/                   -> Contient tous les fichiers de style
   * │   ├── custom-login/
   * │   │   └── styles.css
   * │   └── custom-admin-colors/
