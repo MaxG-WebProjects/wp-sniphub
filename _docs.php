@@ -8,7 +8,7 @@
   * Structure du plugin :
   * /wp-content/plugins/wp-sniphub/
   * ├── wp-sniphub.php         -> Fichier principal qui initialise le plugin
-  * ├── inc/                  -> Contient tous les modules PHP
+  * ├── inc/                   -> Contient tous les modules PHP
   * │   ├── setup.php
   * │   ├── security.php
   * │   ├── custom-login.php
@@ -27,13 +27,14 @@
   * │   ├── gravity-forms.php
   * │   ├── greenshift.php
   * │   └── helpers.php
-  * ├── css/
+  * ├── css/                   -> Contient tous les fichiers de style
   * │   ├── custom-login/
   * │   │   └── styles.css
   * │   └── custom-admin-colors/
   * │       └── color-scheme.css
-  * └── img/
+  * └── img/                   -> Contient tous les fichiers d'images
   * |   ├── icon.svg
+  * |   ├── wp-sniphub-logo.svg.svg
   * │   ├── gravatar-icon-290x290px.png
   * |   ├── dashboard-logo.svg
   * │   └── favicons/
