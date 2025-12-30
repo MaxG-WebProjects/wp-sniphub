@@ -34,6 +34,7 @@
   * │       └── color-scheme.css
   * └── img/
   * |   ├── icon.svg
+  * |   ├── wp-sniphub-logo.svg.svg
   * │   ├── gravatar-icon-290x290px.png
   * |   ├── dashboard-logo.svg
   * │   └── favicons/
