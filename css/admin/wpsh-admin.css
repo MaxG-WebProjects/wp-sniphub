@@ -1,6 +1,25 @@
 /* ==========================================================
-   WPSnipHub - Icône
+   WPSnipHub - Logo
    ========================================================== */
+.wpsh-title {
+	   display: flex;
+	   align-items: center;
+	   gap: 16px;
+	   margin-bottom: 2rem;
+   }
+   
+   /* Texte masqué visuellement mais accessible */
+   .wpsh-title-text {
+	   position: absolute;
+	   left: -9999px;
+   }
+   
+   /* Image du titre */
+   .wpsh-title-image {
+	   max-width: 12.5rem;
+	   height: auto;
+	   margin: 0.8rem;
+   }
 
 
 /* ==========================================================
