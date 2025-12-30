@@ -1,4 +1,5 @@
-!(assets/banner.png)
+![WP SnipHub logo]([images/logo.svg](https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/img/wp-sniphub-logo.svg))
+
 # WP-SnipHub
 Central hub for snippets and utility functions for WordPress sites.
 
