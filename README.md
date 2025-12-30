@@ -1,4 +1,4 @@
-<img src="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/img/wp-sniphub-logo.svg" alt="Logo GreenLight Addon" width="200"/>
+<img src="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/img/wp-sniphub-logo.svg" alt="logo WP-SnipHub" width="200" height="auto"/>
 
 # WP-SnipHub
 Central hub for snippets and utility functions for WordPress sites.
