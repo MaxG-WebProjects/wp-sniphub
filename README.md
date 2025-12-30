@@ -1,6 +1,6 @@
 <img src="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/img/wp-sniphub-logo.svg" alt="logo WP-SnipHub" width="200" height="auto"/>
 
-# WP-SnipHub
+# WPSnipHub
 Central hub for snippets and utility functions for WordPress sites.
 
 # Documentation
