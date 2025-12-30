@@ -32,7 +32,7 @@
   * │   │   └── styles.css
   * │   └── custom-admin-colors/
   * │       └── color-scheme.css
-  * └── img/
+  * └── img/                   -> Contient tous les fichiers d'images
   * |   ├── icon.svg
   * |   ├── wp-sniphub-logo.svg.svg
   * │   ├── gravatar-icon-290x290px.png
