@@ -5,6 +5,7 @@
  * Description: Hub de centralisation de snippets et de fonctions utilitaires.
  * Version: 1.0
  * Author: Max Gremez
+ * Author URI: https://maxgremez.com/
  * Requires at least: 6.3
  * Requires PHP: 7.4
  * License: GPLv2 or later
@@ -161,8 +162,8 @@ function wpsh_register_admin_menu() {
  add_action( 'admin_menu', 'wpsh_register_admin_menu' );
 
 /**
-* Page d’admin
-*/
+ * Page d’admin
+ */
    function wpsh_admin_page() {
 		global $modules;
 	
@@ -175,7 +176,7 @@ function wpsh_register_admin_menu() {
 			echo '<div class="notice notice-success is-dismissible"><p>Modules mis à jour.</p></div>';
 		}
 	
-		$enabled_modules = get_option( 'wpsh_enabled_modules', array_keys($modules) );
+		$enabled_modules = get_option( 'wpsh_enabled_modules', [] );
 	
 	// Inclure le logo
 		echo '<div class="wrap wpsh-wrapper">';
