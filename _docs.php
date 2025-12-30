@@ -8,7 +8,7 @@
   * Structure du plugin :
   * /wp-content/plugins/wp-sniphub/
   * ├── wp-sniphub.php         -> Fichier principal qui initialise le plugin
-  * ├── inc/                  -> Contient tous les modules PHP
+  * ├── inc/                   -> Contient tous les modules PHP
   * │   ├── setup.php
   * │   ├── security.php
   * │   ├── custom-login.php
