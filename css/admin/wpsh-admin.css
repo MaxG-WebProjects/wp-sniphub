@@ -1,6 +1,25 @@
 /* ==========================================================
    WPSnipHub - Logo
    ========================================================== */
+.wpsh-title {
+	   display: flex;
+	   align-items: center;
+	   gap: 16px;
+	   margin-bottom: 2rem;
+   }
+   
+   /* Texte masqué visuellement mais accessible */
+   .wpsh-title-text {
+	   position: absolute;
+	   left: -9999px;
+   }
+   
+   /* Image du titre */
+   .wpsh-title-image {
+	   max-width: 12.5rem;
+	   height: auto;
+	   margin: 0.8rem;
+   }
 
 
 /* ==========================================================
@@ -130,4 +149,96 @@
 	.wpsh-wrapper form {
 		grid-template-columns: 1fr;
 	}
+}
+
+/* ==========================================================
+   Toggle switch (accessible, no JS)
+   ========================================================== */
+
+.wpsh-toggle-wrapper {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+}
+
+/* Input invisible mais accessible */
+.wpsh-toggle-input {
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+/* Switch */
+.wpsh-toggle-switch {
+	position: relative;
+	display: inline-block;
+	width: 42px;
+	height: 22px;
+	background-color: #c3c4c7;
+	border-radius: 999px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+/* Slider */
+.wpsh-toggle-slider {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 16px;
+	height: 16px;
+	background: #fff;
+	border-radius: 50%;
+	transition: transform 0.2s ease;
+}
+
+/* Checked state */
+.wpsh-toggle-input:checked + .wpsh-toggle-switch {
+	background-color: #2271b1;
+}
+
+.wpsh-toggle-input:checked + .wpsh-toggle-switch .wpsh-toggle-slider {
+	transform: translateX(20px);
+}
+
+/* Focus visible (a11y) */
+.wpsh-toggle-input:focus-visible + .wpsh-toggle-switch {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
+}
+
+/* Texte */
+.wpsh-toggle-text {
+	font-size: 13px;
+	color: #1d2327;
+}
+
+/* ==========================================================
+   Badge Actif / Inactif
+   ========================================================== */
+
+.wpsh-status-badge {
+	font-size: 12px;
+	font-weight: 600;
+	padding: 4px 8px;
+	border-radius: 999px;
+	margin-left: auto;
+}
+
+/* Inactif (par défaut) */
+.wpsh-status-badge::before {
+	content: "Inactif";
+	color: #7a1f1f;
+	background-color: #fbeaea;
+	padding: 4px 8px;
+	border-radius: 999px;
+}
+
+/* Actif */
+.wpsh-toggle-input:checked ~ .wpsh-status-badge::before {
+	content: "Actif";
+	color: #0a5d2a;
+	background-color: #e6f4ea;
 }

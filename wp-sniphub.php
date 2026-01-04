@@ -3,7 +3,7 @@
  * Plugin Name: WPSnipHub
  * Plugin URI: https://github.com/MaxG-WebProjects/wp-sniphub.git
  * Description: Hub de centralisation de snippets et de fonctions utilitaires.
- * Version: 1.0
+ * Version: 1.1
  * Author: Max Gremez
  * Author URI: https://maxgremez.com/
  * Requires at least: 6.3
@@ -13,19 +13,26 @@
  * Text Domain: wp-sniphub
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-// Constantes utiles
+/* ==========================================================
+   Constantes
+   ========================================================== */
+
 define( 'WPSH_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WPSH_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-// Sous-dossiers
 define( 'WPSH_INC_DIR', WPSH_PLUGIN_DIR . 'inc/' );
 define( 'WPSH_CSS_URL', WPSH_PLUGIN_URL . 'css/' );
 define( 'WPSH_IMG_URL', WPSH_PLUGIN_URL . 'img/' );
 
-// Modules disponibles
-$modules = [
+/* ==========================================================
+   Définition des modules (SOURCE UNIQUE)
+   ========================================================== */
+
+$wpsh_modules = [
 	'setup.php' => [
 		'title' => 'Configuration de base',
 		'short_desc' => 'Configuration initiale et dépendances du site.',
@@ -123,114 +130,159 @@ $modules = [
 	],
 ];
 
-// Récupère les modules activés depuis la base de données
-$enabled_modules = get_option( 'wpsh_enabled_modules', array_keys($modules) );
+/* ==========================================================
+   Chargement des modules actifs
+   ========================================================== */
 
-// Inclusion des modules activés
-foreach ( $modules as $file => $module_info ) {
-	if ( in_array( $file, $enabled_modules, true ) ) {
-		$path = WPSH_INC_DIR . $file;
-		if ( file_exists( $path ) ) {
-			require_once $path;
+function wpsh_load_modules() {
+	global $wpsh_modules;
+
+	$enabled_modules = get_option(
+		'wpsh_enabled_modules',
+		array_keys( $wpsh_modules )
+	);
+
+	foreach ( $wpsh_modules as $module_file => $module_info ) {
+		if ( in_array( $module_file, $enabled_modules, true ) ) {
+			$path = WPSH_INC_DIR . $module_file;
+			if ( file_exists( $path ) ) {
+				require_once $path;
+			}
 		}
 	}
 }
+add_action( 'plugins_loaded', 'wpsh_load_modules' );
 
-// Inclure et exécuter le module favicon
-require_once plugin_dir_path(__FILE__) . 'inc/favicon.php';
+/* ==========================================================
+   Menu admin
+   ========================================================== */
 
-/**
- * Menu d’admin pour gérer les modules
- */
 function wpsh_register_admin_menu() {
- 
-	 $icon_svg = 'data:image/svg+xml;base64,' . base64_encode(
-		 file_get_contents( WPSH_PLUGIN_DIR . 'img/icon.svg' )
-	 );
- 
-	 add_menu_page(
-		 'WPSnipHub',
-		 'WPSnipHub',
-		 'manage_options',
-		 'wpsh-helper',
-		 'wpsh_admin_page',
-		 $icon_svg,
-		 // ou 'dashicons-admin-tools',
-		 60
-	 );
- }
- add_action( 'admin_menu', 'wpsh_register_admin_menu' );
 
- /**
-  * Page d’admin
-  */
- function wpsh_admin_page() {
-	  global $modules;
-  
-	  if ( isset($_POST['wpsh_save_modules']) && check_admin_referer('wpsh_save_modules_nonce') ) {
-		  $enabled = isset($_POST['modules'])
-			  ? array_map('sanitize_text_field', wp_unslash($_POST['modules']))
-			  : [];
-		  update_option( 'wpsh_enabled_modules', $enabled );
-  
-		  echo '<div class="notice notice-success is-dismissible"><p>Modules mis à jour.</p></div>';
-	  }
-  
-	  $enabled_modules = get_option( 'wpsh_enabled_modules', array_keys($modules) );
-  
-	  echo '<div class="wrap wpsh-wrapper">';
-	  echo '<h1 class="wpsh-title">WPSnipHub – Gestion des modules</h1>';
-  
-	  echo '<form method="post">';
-	  wp_nonce_field('wpsh_save_modules_nonce');
-  
-	  foreach ( $modules as $file => $module_info ) {
-  
-		  $checkbox_id = 'wpsh-module-' . sanitize_title($file);
-		  $checked     = in_array( $file, $enabled_modules, true );
-  
-		  echo '<section class="wpsh-card">';  
-		  echo '  <div class="wpsh-card-header">';
-		  echo '    <h2 class="wpsh-card-title">' . esc_html($module_info['title']) . '</h2>';
-		  echo '  </div>';  
-		  echo '  <div class="wpsh-card-body">';
-		  echo '    <p class="wpsh-card-short">' . esc_html($module_info['short_desc']) . '</p>';
-		  echo '    <p class="wpsh-card-long">' . esc_html($module_info['long_desc']) . '</p>';
-		  echo '  </div>'; 
-		  echo '  <div class="wpsh-card-footer">';
-		  echo '    <label for="' . esc_attr($checkbox_id) . '" class="wpsh-toggle">';
-		  echo '      <input type="checkbox" id="' . esc_attr($checkbox_id) . '" name="modules[]" value="' . esc_attr($file) . '" ' . checked($checked, true, false) . '>';
-		  echo '      <span class="wpsh-toggle-label">Activer le module</span>';
-		  echo '    </label>';
-		  echo '    <span class="wpsh-filename">' . esc_html($file) . '</span>';
-		  echo '  </div>';
-  
-		  echo '</section>';
-	  }
-  
-	  echo '<p class="wpsh-submit">';
-	  echo '  <input type="submit" name="wpsh_save_modules" class="button button-primary" value="Enregistrer">';
-	  echo '</p>';  
-	  echo '</form>';
-	  echo '</div>';
-  }
- 
- 
- /**
-  * Enqueue des styles admin pour WPSnipHub
-  */
- function wpsh_enqueue_admin_styles( $hook_suffix ) {
- 
-	 // Charger le CSS uniquement sur la page du plugin
-	 if ( $hook_suffix !== 'toplevel_page_wpsh-helper' ) {
-		 return;
-	 }
- 
-	 wp_enqueue_style(
-		 'wpsh-admin-style',
-		 WPSH_PLUGIN_URL . 'css/admin/wpsh-admin.css',
-		 [],
-		 filemtime( WPSH_PLUGIN_DIR . 'css/admin/wpsh-admin.css' ) // cache-busting propre
-	 );
- }
- add_action( 'admin_enqueue_scripts', 'wpsh_enqueue_admin_styles' );
+	$icon_path = WPSH_PLUGIN_DIR . 'img/icon.svg';
+	$icon_svg  = file_exists( $icon_path )
+		? 'data:image/svg+xml;base64,' . base64_encode( file_get_contents( $icon_path ) )
+		: 'dashicons-admin-generic';
+
+	add_menu_page(
+		'WPSnipHub',
+		'WPSnipHub',
+		'manage_options',
+		'wpsh-helper',
+		'wpsh_admin_page',
+		$icon_svg,
+		60
+	);
+}
+add_action( 'admin_menu', 'wpsh_register_admin_menu' );
+
+/* ==========================================================
+   Page admin
+   ========================================================== */
+
+function wpsh_admin_page() {
+	global $wpsh_modules;
+
+	if (
+		isset( $_POST['wpsh_save_modules'] ) &&
+		check_admin_referer( 'wpsh_save_modules_nonce' )
+	) {
+		$enabled = isset( $_POST['modules'] )
+			? array_map( 'sanitize_text_field', wp_unslash( $_POST['modules'] ) )
+			: [];
+
+		update_option( 'wpsh_enabled_modules', $enabled );
+
+		echo '<div class="notice notice-success is-dismissible"><p>';
+		esc_html_e( 'Modules mis à jour.', 'wp-sniphub' );
+		echo '</p></div>';
+	}
+
+	$enabled_modules = get_option( 'wpsh_enabled_modules', [] );
+
+	echo '<div class="wrap wpsh-wrapper">';
+
+	echo '<h1 class="wpsh-title">';
+	echo '<span class="wpsh-title-text">';
+	esc_html_e( 'WPSnipHub – Gestion des modules', 'wp-sniphub' );
+	echo '</span>';
+	echo '<img src="' . esc_url( WPSH_IMG_URL . 'wp-sniphub-logo.svg' ) . '" alt="' . esc_attr__( 'WPSnipHub', 'wp-sniphub' ) . '" class="wpsh-title-image">';
+	echo '</h1>';
+
+	echo '<form method="post">';
+	wp_nonce_field( 'wpsh_save_modules_nonce' );
+
+	foreach ( $wpsh_modules as $file => $module ) {
+
+		$id      = 'wpsh-module-' . sanitize_title( $file );
+		$checked = in_array( $file, $enabled_modules, true );
+
+		echo '<section class="wpsh-card">';
+		echo '<header class="wpsh-card-header">';
+		echo '<h2 class="wpsh-card-title">' . esc_html( $module['title'] ) . '</h2>';
+		echo '</header>';
+
+		echo '<div class="wpsh-card-body">';
+		echo '<p class="wpsh-card-short">' . esc_html( $module['short_desc'] ) . '</p>';
+		echo '<p class="wpsh-card-long">' . esc_html( $module['long_desc'] ) . '</p>';
+		echo '</div>';
+		echo '<footer class="wpsh-card-footer">';
+		
+		echo '<div class="wpsh-toggle-wrapper">';
+		
+		echo '<input 
+			type="checkbox"
+			id="' . esc_attr( $id ) . '"
+			name="modules[]"
+			value="' . esc_attr( $file ) . '"
+			class="wpsh-toggle-input"
+			' . checked( $checked, true, false ) . '
+		>';
+		
+		echo '<label for="' . esc_attr( $id ) . '" class="wpsh-toggle-switch">
+			<span class="wpsh-toggle-slider"></span>
+		</label>';
+		
+		echo '<span class="wpsh-toggle-text">';
+		esc_html_e( 'Activer le module', 'wp-sniphub' );
+		echo '</span>';
+		
+		/* ✅ LE BADGE DOIT ÊTRE ICI */
+		echo '<span class="wpsh-status-badge" aria-hidden="true"></span>';
+		
+		echo '</div>';
+		
+		echo '<span class="wpsh-filename">' . esc_html( $file ) . '</span>';
+		
+		echo '</footer>';
+
+
+		echo '</section>';
+	}
+
+	echo '<p class="wpsh-submit">';
+	submit_button( __( 'Enregistrer', 'wp-sniphub' ), 'primary', 'wpsh_save_modules', false );
+	echo '</p>';
+
+	echo '</form>';
+	echo '</div>';
+}
+
+/* ==========================================================
+   Styles admin
+   ========================================================== */
+
+function wpsh_enqueue_admin_styles( $hook_suffix ) {
+
+	if ( $hook_suffix !== 'toplevel_page_wpsh-helper' ) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'wpsh-admin-style',
+		WPSH_PLUGIN_URL . 'css/admin/wpsh-admin.css',
+		[],
+		filemtime( WPSH_PLUGIN_DIR . 'css/admin/wpsh-admin.css' )
+	);
+}
+add_action( 'admin_enqueue_scripts', 'wpsh_enqueue_admin_styles' );

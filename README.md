@@ -3,6 +3,9 @@
 # WPSnipHub
 Central hub for snippets and utility functions for WordPress sites.
 
+## Changelog
+Consultez le fichier [CHANGELOG.md](<a href="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/CHANGELOG.md" alt="lien vers le fichier CHANGELOG.md">CHANGELOG.md</a>) pour l’historique complet des modifications.
+
 # Documentation
 
 ## Description

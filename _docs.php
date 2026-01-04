@@ -100,6 +100,6 @@
   * - Utiliser `require_once` pour inclure les modules depuis `wp-sniphub.php`.
   *
   * Auteur : Max Gremez
-  * Version : 1.0.0
+  * Version : 1.1.0
   * Licence : GPLv2 ou supérieure
   */
