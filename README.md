@@ -54,7 +54,7 @@ wp-sniphub/
 │   ├── security.php
 │   ├── custom-login.php
 │   ├── custom-admin.php
-│   ├── custom-favicon.php
+│   ├── favicon.php
 │   ├── hooks.php
 │   ├── scripts.php
 │   ├── performance.php
@@ -94,6 +94,8 @@ wp-sniphub/
 │       ├── web-app-manifest-512x512.png
 │       ├── safari-pinned-tab.svg
 │       └── site.webmanifest
+│
+├── js/
 │   
 ├── _docs.php # Documentation interne (non chargé)
 └── README.md # Documentation interne (non chargé)
@@ -113,7 +115,7 @@ wp-sniphub/
 │ security.php             │ 10       │ Améliorations de sécurité                 │
 │ custom-login.php         │ 45       │ Personnalisation du login                 │
 │ custom-admin.php         │ 50       │ Personnalisation de l'admin               │
-│ custom-favicon.php       │ 15       │ Personnalisation du favicon               │
+│ favicon.php              │ 15       │ Personnalisation du favicon               │
 │ hooks.php                │ 45       │ Hooks personnalisés (actions/filters)     │
 │ scripts.php              │ 40       │ Chargement CSS/JS                         │
 │ performance.php          │ 45       │ Améliorations des performances            │
