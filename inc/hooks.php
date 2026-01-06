@@ -30,7 +30,7 @@ function javascript_function() {
 		 function changeTitleOnBlur() {
 			 var timer     = null;
 			 var title     = document.title;
-			 var altTitle  = '👋🏼 Eh !';
+			 var altTitle  = 'Eh !';
 			 window.onblur = function() {
 				 timer = window.setInterval( function() {
 					 document.title = altTitle === document.title ? title : altTitle;
