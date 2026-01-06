@@ -113,7 +113,7 @@ $wpsh_modules = [
 		'short_desc' => 'Personnaliser le plugin de formulaire de contact Gravity Forms.',
 		'long_desc' => 'Permet d\'ajouter/modifier des fonctions du plugin (ex : Désactiver les CSS natifs, Corriger l\'accessibilité).',
 	],
-	'custom-favicon.php' => [
+	'favicon.php' => [
 		'title' => 'Gestion du favicon personnalisé',
 		'short_desc' => 'Personnaliser les formats du favicon.',
 		'long_desc' => 'Permet d\'ajouter des favicons supplémentaires (ex : ICO, SVG, Darkmode).',
