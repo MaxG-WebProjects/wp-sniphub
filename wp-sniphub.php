@@ -159,7 +159,7 @@ add_action( 'plugins_loaded', 'wpsh_load_modules' );
 
 function wpsh_register_admin_menu() {
 
-	$icon_path = WPSH_PLUGIN_DIR . 'img/icon.svg';
+	$icon_path = WPSH_PLUGIN_DIR . 'img/admin/icon.svg';
 	$icon_svg  = file_exists( $icon_path )
 		? 'data:image/svg+xml;base64,' . base64_encode( file_get_contents( $icon_path ) )
 		: 'dashicons-admin-generic';
@@ -206,7 +206,7 @@ function wpsh_admin_page() {
 	echo '<span class="wpsh-title-text">';
 	esc_html_e( 'WPSnipHub – Gestion des modules', 'wp-sniphub' );
 	echo '</span>';
-	echo '<img src="' . esc_url( WPSH_IMG_URL . 'wp-sniphub-logo.svg' ) . '" alt="' . esc_attr__( 'WPSnipHub', 'wp-sniphub' ) . '" class="wpsh-title-image">';
+	echo '<img src="' . esc_url( WPSH_IMG_URL . '/admin/wp-sniphub-logo.svg' ) . '" alt="' . esc_attr__( 'WPSnipHub', 'wp-sniphub' ) . '" class="wpsh-title-image">';
 	echo '</h1>';
 
 	echo '<form method="post">';
