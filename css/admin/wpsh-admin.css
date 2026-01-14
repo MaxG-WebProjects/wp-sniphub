@@ -2,69 +2,55 @@
    WPSnipHub - Logo
    ========================================================== */
 .wpsh-title {
-	   display: flex;
-	   align-items: center;
-	   gap: 16px;
-	   margin-bottom: 2rem;
-   }
-   
-   /* Texte masqué visuellement mais accessible */
-   .wpsh-title-text {
-	   position: absolute;
-	   left: -9999px;
-   }
-   
-   /* Image du titre */
-   .wpsh-title-image {
-	   max-width: 12.5rem;
-	   height: auto;
-	   margin: 0.8rem;
-   }
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 2rem;
+}
 
+.wpsh-title-text {
+	position: absolute;
+	left: -9999px;
+}
+
+.wpsh-title-image {
+	max-width: 12.5rem;
+	height: auto;
+	margin: 0.8rem;
+}
 
 /* ==========================================================
-   Layout général
+   General layout
    ========================================================== */
 .wpsh-wrapper {
-	   box-sizing: border-box;
-   }
-   
-   .wpsh-wrapper *,
-   .wpsh-wrapper *::before,
-   .wpsh-wrapper *::after {
-	   box-sizing: inherit;
-   }
-
-.wpsh-wrapper {
+	box-sizing: border-box;
 	max-width: 1600px;
 	margin: 0 auto;
 }
 
-/* Titre principal */
-.wpsh-title {
-	margin-bottom: 2rem;
+.wpsh-wrapper *,
+.wpsh-wrapper *::before,
+.wpsh-wrapper *::after {
+	box-sizing: inherit;
 }
 
 /* ==========================================================
-   Grille des modules (2 colonnes)
+   Module grid (2 columns)
    ========================================================== */
-
 .wpsh-wrapper form {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 20px;
 }
 
-/* Bouton "Enregistrer" sur toute la largeur */
 .wpsh-wrapper form > p {
 	grid-column: 1 / -1;
 	margin-top: 10px;
 }
 
 /* ==========================================================
-   Carte module
+   Module board
    ========================================================== */
-
 .wpsh-card {
 	background: #ffffff;
 	border-radius: 6px;
@@ -77,6 +63,9 @@
 
 /* Header */
 .wpsh-card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	padding: 14px 16px;
 	border-bottom: 1px solid #eee;
 }
@@ -88,7 +77,47 @@
 	color: #2271b1;
 }
 
-/* Body */
+/* ==========================================================
+   Active / Inactive badge
+   ========================================================== */
+
+.wpsh-status-badge {
+	font-size: 11px;
+	font-weight: 600;
+	padding: 2px 6px;
+	border-radius: 999px;
+	min-width: 52px;
+	text-align: center;
+}
+
+/* Default state: Inactive */
+.wpsh-status-badge::before {
+	content: "Inactif";
+	color: #CF0707;
+	background-color: rgba(220, 50, 50, 0.1);
+	padding: 2px 6px;
+	border-radius: 999px;
+}
+
+/* Active if checkbox is checked */
+.wpsh-card:has(.wpsh-toggle-input:checked) .wpsh-status-badge::before {
+	content: "Actif";
+	color: #328F35;
+	background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* Dynamic toggle text */
+.wpsh-toggle-text::before {
+	content: "Activer le module";
+}
+
+.wpsh-card:has(.wpsh-toggle-input:checked) .wpsh-toggle-text::before {
+	content: "Désactiver le module";
+}
+
+/* ==========================================================
+   Body
+   ========================================================== */
 .wpsh-card-body {
 	padding: 14px 16px;
 	flex-grow: 1;
@@ -108,82 +137,54 @@
 	line-height: 1.5;
 }
 
-/* Footer */
+/* ==========================================================
+   Footer
+   ========================================================== */
 .wpsh-card-footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	padding: 12px 16px;
 	border-top: 1px solid #eee;
 	background: #f6f7f7;
 	font-size: 13px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
 }
 
 /* ==========================================================
-   Toggle (checkbox accessible)
+   Toggle switch
    ========================================================== */
-
-.wpsh-toggle {
-	display: inline-flex;
+.wpsh-toggle-container {
+	display: flex;
 	align-items: center;
-	gap: 8px;
-	cursor: pointer;
+	justify-content: space-between;
+	width: 100%;
 }
-
-.wpsh-toggle input[type="checkbox"] {
-	margin: 0;
-}
-
-/* Nom du fichier */
-.wpsh-filename {
-	font-family: monospace;
-	color: #646970;
-	font-size: 12px;
-}
-
-/* ==========================================================
-   Responsive (1 colonne)
-   ========================================================== */
-
-@media (max-width: 1024px) {
-	.wpsh-wrapper form {
-		grid-template-columns: 1fr;
-	}
-}
-
-/* ==========================================================
-   Toggle switch (accessible, no JS)
-   ========================================================== */
 
 .wpsh-toggle-wrapper {
-	display: inline-flex;
+	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 8px;
 }
 
-/* Input invisible mais accessible */
 .wpsh-toggle-input {
 	position: absolute;
 	opacity: 0;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
+	width: 0;
+	height: 0;
 }
 
-/* Switch */
 .wpsh-toggle-switch {
 	position: relative;
-	display: inline-block;
-	width: 42px;
+	width: 44px;
 	height: 22px;
-	background-color: #c3c4c7;
-	border-radius: 999px;
+	background-color: #dcdcde;
+	border-radius: 11px;
 	cursor: pointer;
 	transition: background-color 0.2s ease;
+	margin-right: 8px;
 }
 
-/* Slider */
-.wpsh-toggle-slider {
+.wpsh-toggle-switch::after {
+	content: '';
 	position: absolute;
 	top: 3px;
 	left: 3px;
@@ -194,51 +195,53 @@
 	transition: transform 0.2s ease;
 }
 
-/* Checked state */
 .wpsh-toggle-input:checked + .wpsh-toggle-switch {
 	background-color: #2271b1;
 }
 
-.wpsh-toggle-input:checked + .wpsh-toggle-switch .wpsh-toggle-slider {
-	transform: translateX(20px);
+.wpsh-toggle-input:checked + .wpsh-toggle-switch::after {
+	transform: translateX(22px);
 }
 
-/* Focus visible (a11y) */
-.wpsh-toggle-input:focus-visible + .wpsh-toggle-switch {
-	outline: 2px solid #2271b1;
-	outline-offset: 2px;
-}
-
-/* Texte */
+/* Toggle text */
 .wpsh-toggle-text {
 	font-size: 13px;
 	color: #1d2327;
 }
 
-/* ==========================================================
-   Badge Actif / Inactif
-   ========================================================== */
-
-.wpsh-status-badge {
+/* File name */
+.wpsh-filename {
+	font-family: monospace;
+	color: #646970;
 	font-size: 12px;
-	font-weight: 600;
-	padding: 4px 8px;
-	border-radius: 999px;
 	margin-left: auto;
 }
 
-/* Inactif (par défaut) */
-.wpsh-status-badge::before {
-	content: "Inactif";
-	color: #7a1f1f;
-	background-color: #fbeaea;
-	padding: 4px 8px;
-	border-radius: 999px;
+/* Notice hidden by default */
+.wpsh-save-notice {
+	display: none;
+	font-size: 11px;
+	color: #646970;
+	font-style: italic;
+	margin-left: 16px;
+}
+/* Notice visible as soon as a change is made */
+.wpsh-card:has(.wpsh-toggle-input:checked) .wpsh-save-notice {
+	display: inline;
 }
 
-/* Actif */
-.wpsh-toggle-input:checked ~ .wpsh-status-badge::before {
-	content: "Actif";
-	color: #0a5d2a;
-	background-color: #e6f4ea;
+/* Display as soon as modification */
+.wpsh-card:has(.wpsh-toggle-input:checked) .wpsh-save-notice,
+.wpsh-card:has(.wpsh-toggle-input:not(:checked)) .wpsh-save-notice {
+	display: inline;
+}
+
+
+/* ==========================================================
+   Responsive (1 column)
+   ========================================================== */
+@media (max-width: 1024px) {
+	.wpsh-wrapper form {
+		grid-template-columns: 1fr;
+	}
 }

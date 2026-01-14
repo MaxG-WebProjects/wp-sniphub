@@ -1,29 +1,22 @@
-<img src="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/img/wp-sniphub-logo.svg" alt="logo WP-SnipHub" width="200" height="auto"/>
-
-# WPSnipHub
+=== WPSnipHub ===
+Contributors: @maxcgparis
+Tags: hub, code snippets, scripts and styles management, dashboard customization, woocommerce.
+Author: @maxcgparis
+Author URI: https://maxgremez.com/
+Plugin URI: https://github.com/MaxG-WebProjects/wp-sniphub
+Version: 1.2.0
+Stable tag: 1.2.0
+Requires at least: 6.7
+Tested up to: 6.9
+Requires PHP: 8.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A dev-oriented central and modular hub for code snippets and utility functions of WordPress sites
 
-## Compatibility
+=== Documentation ===
 
-- Version: 1.2.0
-- Stable version: 1.2.0
-- Requires at least: 6.7
-- Tested up to: 6.9
-- Requires PHP: 8.0
-
-## License
-
-This project is licensed under the GNU General Public License v2.0 or later.
-
-- License: GPL-2.0-or-later
-- License URI: https://www.gnu.org/licenses/gpl-2.0.html
-
----
-
-# Documentation
-
-## Description
+== Description ==
 
 **WPSnipHub** is a modular WordPress plugin designed to centralize reusable snippets and utility functions in a clean, maintainable, and scalable way.
 
@@ -43,7 +36,7 @@ The plugin follows WordPress coding standards and best practices.
 
 ---
 
-## Installation
+== Installation ==
 
 1. Upload the `wp-sniphub-main` directory to `/wp-content/plugins/`
 2. Activate the plugin through the WordPress admin panel
@@ -53,13 +46,13 @@ The plugin follows WordPress coding standards and best practices.
 
 ---
 
-## Changelog
+== Changelog ==
 
 See the full changelog in the dedicated file: [CHANGELOG.md](<a href="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/CHANGELOG.md" alt="link to file CHANGELOG.md">CHANGELOG.md</a>) for the complete history of changes.
 
 ---
 
-## Objectives
+== Objectives ==
 
 The goal is to ensure:
 - A centralized interface for functions
@@ -71,9 +64,8 @@ The goal is to ensure:
 
 ---
 
-## Plugin structure
+== Plugin structure ==
 
-```
 wp-sniphub/
 │
 ├── _docs.php # Internal documentation (not loaded)
@@ -129,15 +121,13 @@ wp-sniphub/
         ├── web-app-manifest-512x512.png
         ├── safari-pinned-tab.svg
         └── site.webmanifest
-
-```
  
 ---
 
-## Order of execution (priorities)
-```
+== Order of execution (priorities) ==
+
 ┌──────────────────────────┬────────────┬───────────────────────────────────────────┐
-│ Modules                  │ Priorities │ Roles                                     │
+│ Modules                  │ Priorities │ Roles                                      │
 ├──────────────────────────┼────────────┼───────────────────────────────────────────┤
 │ setup.php                │ 5          │ Initialisation                            │
 │ security.php             │ 10         │ Security improvements                     │
@@ -159,10 +149,9 @@ wp-sniphub/
 │ greenshift.php           │ 35         │ Customizing the Greenshift plugin         │
 │ helpers.php              │ 20         │ Utility functions                         │
 │ ...                      │ ..         │ ...                                       │
-│ ...                      │ ..         │ ...                                       │
+│ ...                      │ ..         │ ...                                       │  
 │ ...                      │ ..         │ ...                                       │
 └──────────────────────────┴────────────┴───────────────────────────────────────────┘
-```
 
 ## Guidelines for WPSnipHub module creation
 

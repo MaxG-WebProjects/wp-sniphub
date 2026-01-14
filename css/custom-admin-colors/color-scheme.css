@@ -1,6 +1,6 @@
-/* Motif d'arrière-plan principale
-// Nom du fichier SVG : white-pattern-background-abstract-geometric-simple-design-vector_53876-156384-#d1d1d1.svg
-// Source via https://www.freepik.com/free-vector/white-pattern-background-abstract-geometric-simple-design-vector_20346216.htm#page=7&query=svg%20patterns&position=12&from_view=keyword&track=ais
+/* Main background pattern
+//SVG file name: white-pattern-background-abstract-geometric-simple-design-vector_53876-156384-#d1d1d1.svg
+// via https://www.freepik.com/free-vector/white-pattern-background-abstract-geometric-simple-design-vector_20346216.htm#page=7&query=svg%20patterns&position=12&from_view=keyword&track=ais
 */
 body {
   background: #ececec;
@@ -10,27 +10,27 @@ body {
   }
 }
 
-background-color: #e5e5f7;
-opacity: 0.8;
-background-image:  linear-gradient(30deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(150deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(30deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(150deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(60deg, #444cf777 25%, transparent 25.5%, transparent 75%, #444cf777 75%, #444cf777), linear-gradient(60deg, #444cf777 25%, transparent 25.5%, transparent 75%, #444cf777 75%, #444cf777);
-background-size: 20px 35px;
-background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+/* Alternative geometric background (optional) */
+/*
+body {
+  background-color: #e5e5f7;
+  background-image:
+  linear-gradient(30deg, #444cf7 12%, transparent 12.5%), linear-gradient(150deg, #444cf7 12%, transparent 12.5%);
+  background-size: 20px 35px;
+  background-position: 0 0, 10px 18px;
+}
+*/
 
 /* Links */
 a {
   color: #1901ff;
 }
-
 a:hover, a:active, a:focus {
   color: #4734ff;
 }
-
-#post-body .misc-pub-post-status:before,
-#post-body #visibility:before,
-.curtime #timestamp:before,
-#post-body .misc-pub-revisions:before,
-span.wp-media-buttons-icon:before {
-  color: currentColor;
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 /* Forms */

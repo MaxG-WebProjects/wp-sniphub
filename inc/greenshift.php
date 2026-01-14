@@ -1,25 +1,31 @@
 <?php
 /**
- * Filtres et actions
+ * GreenShift
+ *
+ * @package WPSnipHub
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/* Greenshift Night Mode - How to prevent Style flashing
+/* ==========================================================
+   Greenshift Night Mode - How to prevent Style flashing
+   ========================================================== */
+/* 
 // via https://greenshiftwp.com/how-to-add-night-mode-in-wordpress/
 */
-add_filter('body_class', 'greenshift_theme_body_classes');
-function greenshift_theme_body_classes($classes){
-	if (isset($_COOKIE['darkmode'])){
+add_filter( 'body_class', 'wpsh_greenshift_body_classes' );
+function wpsh_greenshift_body_classes( $classes ) {
+	if ( isset( $_COOKIE['darkmode'] ) ) {
 		$classes[] = 'darkmode';
 	}
 	return $classes;
 }
 
-////////////////////////////////////////////////////
-
+/* ==========================================================
+   Greenshift Night Mode - How to prevent Style flashing
+   ========================================================== */
 /* Greenshift Custom Breakpoints :
 // via https://greenshiftwp.com/documentation/for-developers/theme-integration-with-greenshift/
 add_filter('greenshift_responsive_breakpoints', function($array){
@@ -41,9 +47,10 @@ add_filter('gspb_default_row_width_px', function($row){
 
 */
 
-////////////////////////////////////////////////////
-
-/* How to register own CSS framework or enable Core Framework addon with Greenshift
+/* ==================================================================================
+   How to register own CSS framework or enable Core Framework addon with Greenshift
+   ================================================================================== */
+/* 
 // via https://greenshiftwp.com/class-first-system-and-how-to-register-own-css-framework-and-components/
 // Add additional classes to style presets
 add_filter('greenshift_style_preset_classes', 'mycustom_greenshift_style_classes');
@@ -104,11 +111,11 @@ return array(
 	);
 }
 
-// + Using Core Framework with Greenshift
+/* ==========================================================
+   Using Core Framework with Greenshift
+   ========================================================== */
+// 
 // > Inject utility classes of the Core framework Gutenberg plugin in selector of classes in Greenshift
 // For this, enable option in Greenshift settings – CSS Options > Support for Core Framework Utility classes
 // Also, we strongly recommend checking if your font size is equal to 100% in the option of Core framework plugin
-// >> https://greenshiftwp.com/class-first-system-and-how-to-register-own-css-framework-and-components/
-*/
-
-////////////////////////////////////////////////////
+// via https://greenshiftwp.com/class-first-system-and-how-to-register-own-css-framework-and-components/

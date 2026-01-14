@@ -1,80 +1,123 @@
 <?php
 /**
- * Fonctions utilitaires du MU-plugin
+ * Helpers - Utility functions
  *
- * Ces fonctions ne sont pas accrochées à des hooks,
- * elles sont appelées directement dans les templates ou modules.
+ * @package WPSnipHub
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+/* ==========================================================
+   Helpers WPSnipHub
+   ========================================================== */
 /**
- * Récupère un extrait de contenu (par défaut 20 mots)
+ * Retrieves a content excerpt (20 words by default)
+ *
+ * @param int      $length  Nombre de mots.
+ * @param int|null $post_id ID du post.
+ * @return string
  */
-function theme_get_excerpt( $length = 20, $post_id = null ) {
-    $post_content = $post_id ? get_post_field( 'post_content', $post_id ) : get_the_content();
-    return wp_trim_words( wp_strip_all_tags( $post_content ), $length );
+function wpsh_get_excerpt( $length = 20, $post_id = null ) {
+    $post_content = $post_id
+        ? get_post_field( 'post_content', $post_id )
+        : get_the_content();
+
+    return wp_trim_words(
+        wp_strip_all_tags( $post_content ),
+        absint( $length )
+    );
 }
 
-/**
- * Affiche l'image mise en avant avec balise <img> complète
+/* ==========================================================
+   Displays the featured image with the complete <img> tag
+   ========================================================== */
+/*
+ * @param string $size  Taille d’image.
+ * @param string $class Classe CSS.
+ * @return void
  */
-function theme_the_post_thumbnail( $size = 'large', $class = '' ) {
-    if ( has_post_thumbnail() ) {
-        $id  = get_post_thumbnail_id();
-        $alt = get_post_meta( $id, '_wp_attachment_image_alt', true );
-        $alt = $alt ?: get_the_title();
-        echo wp_get_attachment_image( $id, $size, false, [ 'class' => $class, 'alt' => esc_attr( $alt ) ] );
+function wpsh_the_post_thumbnail( $size = 'large', $class = '' ) {
+    if ( ! has_post_thumbnail() ) {
+        return;
     }
+
+    $id  = get_post_thumbnail_id();
+    $alt = get_post_meta( $id, '_wp_attachment_image_alt', true );
+    $alt = $alt ? $alt : get_the_title();
+
+    echo wp_get_attachment_image(
+        $id,
+        $size,
+        false,
+        [
+            'class' => esc_attr( $class ),
+            'alt'   => esc_attr( $alt ),
+        ]
+    );
 }
 
-/**
- * Récupère une couleur définie dans le Customizer
+
+/* ==========================================================
+   Retrieves a color defined in the Customizer
+   ========================================================== */
+ /*
+ * @param string $setting Setting name.
+ * @param string $default Valeur par défaut.
+ * @return string
  */
-function theme_get_color( $setting = 'theme_primary_color', $default = '#00155A' ) {
+function wpsh_get_color( $setting = 'theme_primary_color', $default = '#00155A' ) {
     return get_theme_mod( $setting, $default );
 }
 
-/**
- * Retourne une date formatée en français
+/* ================================================================
+   Returns a formatted and localized date (in French, for example).
+   ================================================================ */
+ /*
+ *
+ * @param string|null $date   Date source.
+ * @param string      $format Format.
+ * @return string
  */
-function theme_format_date( $date = null, $format = 'j F Y' ) {
+function wpsh_format_date( $date = null, $format = 'j F Y' ) {
     if ( ! $date ) {
         $date = get_the_date( 'Y-m-d' );
     }
-    return date_i18n( $format, strtotime( $date ) );
+
+    return wp_date( $format, strtotime( $date ) );
 }
 
-/**
- * Vérifie si la page actuelle est une sous-page
+/* ==========================================================
+   Checks if the current page is a subpage
+   ========================================================== */
+ /*
+ * @param int|null $parent_id ID du parent.
+ * @return bool
  */
-function theme_is_subpage( $parent_id = null ) {
+function wpsh_is_subpage( $parent_id = null ) {
     global $post;
-    if ( is_page() && $post->post_parent ) {
-        return $parent_id ? ( $post->post_parent == $parent_id ) : true;
+
+    if ( is_page() && ! empty( $post->post_parent ) ) {
+        return $parent_id
+            ? (int) $post->post_parent === (int) $parent_id
+            : true;
     }
+
     return false;
 }
 
-/**
- * Raccourci pour debug (affiche une variable proprement)
+/* ==========================================================
+   Debug entry point
+   ========================================================== */
+/*
+ * Debug entry point (no output) //safe WordPress.org
+ *
+ * @param mixed $var Donnée à inspecter.
+ * @return void
  */
-function theme_debug( $var, $display = true ) {
-     if ( defined('WP_DEBUG') && WP_DEBUG ) {
-         // Utiliser var_export() plutôt que print_r()
-         $output = var_export( $var, true );
- 
-         if ( $display ) {
-             echo '<pre style="background:#111;color:#0f0;padding:10px;border-radius:5px;font-size:13px;overflow:auto;">';
-             echo esc_html( $output );
-             echo '</pre>';
-         } else {
-             // Utiliser wp_debug_backtrace_summary() pour le contexte + error_log via _doing_it_wrong()
-             _doing_it_wrong( __FUNCTION__, 'Debug output logged', '1.0.0' );
-             trigger_error( $output, E_USER_NOTICE );
-         }
-     }
- }
-
+function wpsh_debug_log( $var ) {
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        do_action( 'wpsh_debug', $var );
+    }
+}

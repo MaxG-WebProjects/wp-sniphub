@@ -1,14 +1,18 @@
 <?php
 /**
  * Custom Post Types
+ *
+ * @package WPSnipHub
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Tableau de configuration des CPTs
+/* ==========================================================
+   CPT configuration table
+   ========================================================== */
+/*
  * Chaque entrée correspond à un CPT
  */
 function wpsh_get_cpts_config() {
@@ -41,7 +45,7 @@ function wpsh_get_cpts_config() {
 }
 
 /**
- * Génère automatiquement les labels pour un CPT
+ * Automatically generates labels for a CPT
  */
 function wpsh_generate_labels( $singular, $plural ) {
 	return [
@@ -61,7 +65,7 @@ function wpsh_generate_labels( $singular, $plural ) {
 }
 
 /**
- * Fonction principale : enregistrement des CPTs
+ * Main function: recording of CPTs
  */
 function wpsh_register_cpts() {
 	$cpts = wpsh_get_cpts_config();
@@ -73,7 +77,7 @@ function wpsh_register_cpts() {
 			'labels'             => $labels,
 			'public'             => true,
 			'show_in_rest'       => true,
-			'rest_controller_class' => 'WP_REST_Posts_Controller', // Compatibilité Gutenberg / API REST.
+			'rest_controller_class' => 'WP_REST_Posts_Controller', // Gutenberg / REST API compatibility.
 			'supports'           => $args['supports'],
 			'rewrite'            => [ 'slug' => $args['slug'], 'with_front' => false ],
 			'has_archive'        => $args['has_archive'],

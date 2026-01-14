@@ -1,58 +1,81 @@
 <?php
 /**
- * Personnalisation du login
+ * Customizing the login
+ *
+ * @package WPSnipHub
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Comment personnaliser la page de connexion à WordPress ?
+/* ==========================================================
+   Remove "Back to site" link
+   ========================================================== */
+// How do I customize the WordPress login page?
 // via https://astuceswp.fr/tutos/478/personnalisation-page-login-wordpress
 // Here's my custom CSS that removes the back link in a function
-function my_login_page_remove_back_to_link() { ?>
+function wpsh_login_remove_back_to_link() {
+	?>
 	<style type="text/css">
 		body.login div#login p#backtoblog {
-		  display: none;
+			display: none;
 		}
 	</style>
-<?php }
+	<?php
+}
 //This loads the function above on the login page
-add_action( 'login_enqueue_scripts', 'my_login_page_remove_back_to_link' );
+add_action( 'login_enqueue_scripts', 'wpsh_login_remove_back_to_link' );
 
+/* ==========================================================
+   Custom login stylesheet
+   ========================================================== */
 // Replace style-login.css with the name of your custom CSS file
-function my_custom_login_stylesheet() {
-	$css_file = WPSH_CSS_URL . 'custom-login/styles.css';
-	$css_path = WPSH_PLUGIN_DIR . 'css/custom-login/styles.css';
+function wpsh_login_enqueue_styles() {
+	$css_file = WPSH_CSS_URL . 'custom-login/login-styles.css';
+	$css_path = WPSH_PLUGIN_DIR . 'css/custom-login/login-styles.css';
 
 	wp_enqueue_style(
-		'custom-login',
-		$css_file,
+		'wpsh-custom-login',
+		esc_url( $css_file ),
 		[],
-		file_exists( $css_path ) ? filemtime( $css_path ) : false // Automatic update of the date of the style.css file > avoids loading the cached one
+		file_exists( $css_path ) ? filemtime( $css_path ) : null // Automatic update of the date of the style.css file > avoids loading the cached one
 	);
 }
-add_action( 'login_enqueue_scripts', 'my_custom_login_stylesheet' );
+add_action( 'login_enqueue_scripts', 'wpsh_login_enqueue_styles' );
 
+/* ==========================================================
+   Login logo URL
+   ========================================================== */
 // Change logo URL
-function my_login_logo_url() {
-	return get_bloginfo( 'url' );
+function wpsh_login_logo_url() {
+	return esc_url( home_url( '/' ) );
 }
-add_filter( 'login_headerurl', 'my_login_logo_url' );
+add_filter( 'login_headerurl', 'wpsh_login_logo_url' );
 
+/* ==========================================================
+   Login logo title
+   ========================================================== */
 // Change logo title
-function my_login_logo_url_title() {
-	return 'Max Gremez | Responsable de Projets Web & Marketing Digital';
+function wpsh_login_logo_title() {
+	return esc_html__( 'Max Gremez | Responsable de Projets Web & Marketing Digital', 'wp-sniphub' );
 }
-add_filter( 'login_headertext', 'my_login_logo_url_title' );
+add_filter( 'login_headertext', 'wpsh_login_logo_title' );
 
+/* ==========================================================
+   Custom login error message
+   ========================================================== */
 // Change default login error message
-function login_error_override() {
-	return 'Ce n&rsquo;est pas la bonne combinaison';
+function wpsh_login_error_message() {
+	return esc_html__( 'Ce n’est pas la bonne combinaison', 'wp-sniphub' );
 }
-add_filter('login_errors', 'login_error_override');
+add_filter( 'login_errors', 'wpsh_login_error_message' );
 
-// Disable shake animation
-function my_login_head() {
-	remove_action('login_head', 'wp_shake_js', 12);
+/* ==========================================================
+   Disable login shake animation
+   ========================================================== */
+
+function wpsh_login_disable_shake() {
+	remove_action( 'login_head', 'wp_shake_js', 12 );
 }
-add_action('login_head', 'my_login_head', 50);
+add_action( 'login_head', 'wpsh_login_disable_shake', 50 );

@@ -11,7 +11,7 @@ body.login {
 
 /* Replace the WordPress Logo With a Custom Logo */
 .login h1 a {
-  background-image: url('img/max-gremez-logo.svg');
+  background-image: url('img/wp-sniphub-logo.svg');
   background-size: 298px 47px;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@ body.login {
   -webkit-border-radius: 10px;
 }
 
-/* Textes */
+/* Texts */
 .login label {
   font-size: 12px;
   color: #FFF;
@@ -66,7 +66,7 @@ input[type="checkbox"] {
 .wp-core-ui .button, .wp-core-ui .button-secondary {
   color: #033fff;
 }
-/* Color on hover > modifier la langue */
+/* Color on hover > change language */
 .wp-core-ui .button.hover,
 .wp-core-ui .button:hover,
 .wp-core-ui .button-secondary:hover {
@@ -84,7 +84,7 @@ input[type="text"], input[type="password"], input[type="color"], input[type="dat
   float: unset; /* ex : left */
 }
 
-/* Center the button 'Se connecter' */
+/* Center the button 'Log in' */
 #login form p.submit {
   display: grid;  
   justify-content: center;
@@ -140,7 +140,7 @@ input[type="text"], input[type="password"], input[type="color"], input[type="dat
   box-shadow: none;
 }
 
-/* Customisation > Mot de passe oublié ? */
+/* Customization > Forgot your password? */
 .login #nav {
   text-align: center;
 }
@@ -181,12 +181,12 @@ input[type="text"], input[type="password"], input[type="color"], input[type="dat
   box-shadow: none;
 }
 
-/* Customisation du bouton 'Générer un mot de passe' */
+/* Customizing the 'Generate a password' button */
 .wp-core-ui .button.button-large, .wp-core-ui .button-group.button-large .button {
   width: 176px;
 }
 
-/* Customisation > Politique de confidentialité | RGPD */
+/* Customization > Privacy Policy | GDPR */
 .privacy-policy-page-link .privacy-policy-link {
   color: #FFF;
   text-decoration: none;
@@ -201,14 +201,13 @@ p#backtoblog {
   display: none;
 }
 
-/* Customisation du message */
-/* 'Votre déconnexion a bien été effectuée' */
+/* Customizing the message: 'Your logout has been successful' */
 #login-message.notice.notice-info.message {
   color: #fff;
 }
 
-/* Customisation des messages d'erreur */
-/* Mauvais login > 'Bah alors tu te trompes' */
+/* Customizing error messages */
+/* Bad login > 'Bah alors tu te trompes' */
 .login .message, .login .success, .login #login_error {
   color: #000000;
   text-align: center;
@@ -217,24 +216,24 @@ p#backtoblog {
   border-left: none;
 }
 
-/* Customisation de la séparation '--- OR ---' entre 'Se connecter' et 'Login with your password' */
+/* Customizing the separation '--- OR ---' between 'Connect' and 'Login with your password' */
 .itsec-pwls-login-fallback__or {
   margin-bottom: 1em !important;
 }
 
-/* Customisation popup 'Authentication Code' (Mot de passe perdu) */
+/* Customizing the 'Authentication Code' popup (Forgot your password?) */
 .login form {
   background: #00106D;
   border-color: #01FFB3;
   -webkit-border-radius: 10px;
 }
 
-/* Customisation textes popup 'Authentication Code' */
+/* Customization of popup texts 'Authentication Code' */
 #login form p {
   color: #F2F2F2; /*ex: #00E1FF;*/
 }
 
-/* Customisation de l'image d'enveloppe iThemes
+/* Customizing the iThemes envelope image
 * via https://askcodez.com/masquer-le-src-de-limage-dans-un-img-element-mais-de-montrer-son-image-darriere-plan.html
 */
 img.itsec-pwls-login__logo {
@@ -244,7 +243,7 @@ img.itsec-pwls-login__logo {
   height: 116; /*or your image's height*/
 }
 
-/* Customisation texte + bouton 'Email Magic Link' */
+/* Text customization + 'Email Magic Link' button */
 a.itsec-pwls-login__link {
   color: #FFF;
   background: #00106D;
@@ -258,7 +257,7 @@ a.itsec-pwls-login__link:hover {
   border-color: #033FFF;
 }
 
-/* Customisation bouton 'Send' du 'Email Magic Link' */
+/* Customization of the 'Send' button of the 'Email Magic Link' */
 button.itsec-pwls-login__submit {
   color: #FFF;
   background: rgba(0, 16, 109, 0);
@@ -271,7 +270,7 @@ button.itsec-pwls-login__submit:hover {
   background-color: #033FFF;
 }
 
-/* Customisation couleur texte 'Login with username and password' */
+/* Text color customization 'Login with username and password' */
 a.itsec-pwls-login-fallback__link {
   color: #FFF;
   background: #00106D;
@@ -287,7 +286,7 @@ a.itsec-pwls-login-fallback__link:hover {
   border-color: #033FFF;
 }
 
-/* Customisation 'Authentification Code' > Email / Backup Authentification Codes */
+/* Customizing 'Authentication Code' > Email / Backup Authentication Codes */
 ::marker {
   color: #FFF;
 }

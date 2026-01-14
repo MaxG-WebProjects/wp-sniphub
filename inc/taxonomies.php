@@ -1,14 +1,19 @@
 <?php
 /**
- * Taxonomies personnalisées
+ * Taxonomies
+ *
+ * @package WPSnipHub
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/* ==========================================================
+   Taxonomy
+   ========================================================== */
 /**
- * Tableau de configuration des taxonomies
+ * Taxonomy configuration table
  */
 function wpsh_get_taxonomies_config() {
 	return [
@@ -17,7 +22,7 @@ function wpsh_get_taxonomies_config() {
 			'plural'     => 'Catégories de Portfolio',
 			'slug'       => 'categorie-portfolio',
 			'post_types' => [ 'portfolio' ],
-			'hierarchical' => true, // true = catégories (avec hiérarchie), false = étiquettes
+			'hierarchical' => true, // true = categories (with hierarchy), false = labels
 		],
 		'event_type' => [
 			'singular'   => 'Type d’événement',
@@ -30,7 +35,7 @@ function wpsh_get_taxonomies_config() {
 }
 
 /**
- * Génère automatiquement les labels pour une taxonomie
+ * Automatically generates labels for a taxonomy
  */
 function wpsh_generate_tax_labels( $singular, $plural ) {
 	return [
@@ -49,7 +54,7 @@ function wpsh_generate_tax_labels( $singular, $plural ) {
 }
 
 /**
- * Fonction principale : enregistrement des taxonomies
+ * Main function: recording taxonomies
  */
 function wpsh_register_taxonomies() {
 	$taxonomies = wpsh_get_taxonomies_config();
