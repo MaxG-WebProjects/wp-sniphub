@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WPSnipHub
- * Plugin URI: https://github.com/MaxG-WebProjects/wp-sniphub.git
+ * Plugin URI: https://github.com/MaxG-WebProjects/wp-sniphub
  * Description: A dev-oriented central and modular hub for code snippets and utility functions of WordPress sites.
  * Version: 1.2.0
  * Stable tag: 1.2.0
