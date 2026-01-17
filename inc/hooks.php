@@ -31,6 +31,7 @@ add_action('wp_head', function () {
 // Example:
 // 1F44B → 👋 & 1F3FC → skin tone modifier = U+1F44B U+1F3FC → 👋🏼
 */
+
 function wpsh_browser_tab_notification() { 
 	?>
 	<script>

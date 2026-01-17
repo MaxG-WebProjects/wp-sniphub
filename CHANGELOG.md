@@ -3,6 +3,12 @@ All notable changes to **WPSnipHub** are documented in this file.
 This project follows WordPress.org coding standards and GitHub best practices.
 
 ---
+## [Unreleased] – 2026-01-16
+### Fixed
+- Fixed browser tab notification emoji encoding issue. Fixes an encoding issue where the emoji used in the browser tab notification
+was rendered as plain text instead of an icon.
+
+---
 
 ## [Unreleased] – 2026-01-17
 ### Fixed
