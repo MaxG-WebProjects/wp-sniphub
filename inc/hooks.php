@@ -26,6 +26,10 @@ add_action('wp_head', function () {
 // via https://www.wpbeginner.com/wp-tutorials/how-to-easily-add-browser-tab-notification-in-wordpress/
 // + via https://stackoverflow.com/questions/73854669/woocommerce-change-page-title-when-tab-is-not-active
 // + >> https://www.hostinger.com/tutorials/wordpress-javascript#How_to_Add_JavaScript_to_WordPress_Manually_Using_wp_head_and_wp_footer_Hooks
+//
+// + LIST OF EMOJIS: https://unicode.org/emoji/charts/full-emoji-list.html
+// Example:
+// 1F44B → 👋 & 1F3FC → skin tone modifier = U+1F44B U+1F3FC → 👋🏼
 */
 function wpsh_browser_tab_notification() { 
 	?>
@@ -33,7 +37,7 @@ function wpsh_browser_tab_notification() {
 		(function () {
 			let timer = null;
 			const title    = document.title;
-			const altTitle = '👋🏼 Eh !';
+			const altTitle = '\u{1F44B}\u{1F3FC} Eh !';
 
 			window.addEventListener('blur', function () {
 				timer = window.setInterval(function () {
