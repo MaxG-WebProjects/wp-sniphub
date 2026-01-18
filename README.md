@@ -48,10 +48,6 @@ The plugin follows WordPress coding standards and best practices.
 > - Developers or advanced users may also customize or comment out code directly inside a module if required.
 > - This allows you to keep your site clean, lightweight, and fully tailored to your needs.
 > - You can also create your own modules by following the [Module Creation Guidelines](#guidelines-for-wpsniphub-module-creation).
-> • Each feature lives in its own module and can be enabled or disabled independently from the Dashboard.
-> • Developers or advanced users may also customize or comment out code directly inside a module if required.
-> • This allows you to keep your site clean, lightweight, and fully tailored to your needs.
-> • You can also create your own modules by following the [Module Creation Guidelines](#guidelines-for-wpsniphub-module-creation).
 
 ---
 
