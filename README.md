@@ -186,7 +186,7 @@ To ensure that each module:
 - passes Plugin Check without critical errors
 - facilitates easy adoption
 - evolves without technical debt
-- can be disabled via WPSnipHub
+- can be disabled via **WPSnipHub**
 - is compatible with WordPress.org. Even though **WPSnipHub** is not intended to be published on the official plugin repository
 
 ---
