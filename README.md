@@ -1,4 +1,4 @@
-<img src="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/img/wp-sniphub-github-banner-1544x500px.png" alt="WP SnipHub banner" width="auto" height="auto"/>
+<img src="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/img/wp-sniphub-github-banner-1544x500px.png" alt="WPSnipHub banner" width="auto" height="auto"/>
 
 # WPSnipHub
 
@@ -43,7 +43,7 @@ The plugin follows WordPress coding standards and best practices.
 
 > [!TIP]
 >
-> WP SnipHub is a modular hub for managing custom WordPress snippets.
+> **WPSnipHub** is a modular hub for managing custom WordPress snippets.
 > - Each feature lives in its own module and can be enabled or disabled independently from the Dashboard.
 > - Developers or advanced users may also customize or comment out code directly inside a module if required.
 > - This allows you to keep your site clean, lightweight, and fully tailored to your needs.
