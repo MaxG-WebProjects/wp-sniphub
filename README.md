@@ -63,7 +63,7 @@ The plugin follows WordPress coding standards and best practices.
 
 ## Changelog
 
-See the full changelog in the dedicated file: [CHANGELOG.md](<a href="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/CHANGELOG.md" alt="link to file CHANGELOG.md">CHANGELOG.md</a>) for the complete history of changes.
+See the full changelog in the dedicated file: (<a href="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/CHANGELOG.md" alt="link to file CHANGELOG.md">CHANGELOG.md</a>) for the complete history of changes.
 
 ---
 
@@ -192,9 +192,10 @@ To ensure that each module:
 ---
 
 ### 2. Minimum Module Structure
-Each module must be a single PHP file located in:
 
-/inc/nom-du-module.php
+> [!NOTE]
+> Each module must be a single PHP file located in:
+> /inc/module.php
 
 Recommended header:
 ```php
@@ -212,7 +213,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 ---
 
 ### 3. Prefix everything that is global
-wpsh_
+
+> [!IMPORTANT]
+> wpsh_
 
 This prefix must be used consistently for:
 ```
@@ -262,9 +265,11 @@ function wpsh_register_cpt() {
 ---
 
 ### 5. Use of anonymous functions (closures)
-Anonymous functions are only permitted for:
-- very simple filters
-- direct return (__return_true, etc.)
+
+> [!NOTE]
+> Anonymous functions are only permitted for:
+> - very simple filters
+> - direct return (__return_true, etc.)
 
 To avoid:
 ```php
@@ -287,7 +292,9 @@ function wpsh_init_module() {
 ---
 
 ### 6. Internationalization (i18n)
-Always provide the text domain: wp-sniphub
+
+> [!IMPORTANT]
+> Always provide the text domain: wp-sniphub.
 
 Incorrect:
 ```php
@@ -348,8 +355,9 @@ wp_date( 'Y' );
 
 ### 9. Best practices for third-party plugins
 
-- Always use the WPSH prefix, even in third-party hooks.
-- Never use the third-party plugin's text domain.
+> [!IMPORTANT]
+> - Always use the WPSH prefix, even in third-party hooks.
+> - Never use the third-party plugin's text domain.
 
 Incorrect:
 ```php
