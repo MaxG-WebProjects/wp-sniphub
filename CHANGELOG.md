@@ -4,6 +4,13 @@ This project follows WordPress.org coding standards and GitHub best practices.
 
 ---
 
+## [Unreleased] – 2026-01-19
+### Fixed
+- **Greenshift module**: Add a correction to the title of Greenshift Custom Breakpoints's function 
+- **Scripts module**: Commented out the default script enqueue to prevent loading a non-existent `main.js` file.
+
+---
+
 ## [Unreleased] – 2026-01-17
 ### Changed
 - The extension's visual appearance has been changed on the GitHub page. The logo has been replaced with a banner.

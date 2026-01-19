@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Enqueue frontend styles.
  *
  * @return void
- */
+
 function wpsh_enqueue_styles() {
 
      wp_enqueue_style(
@@ -25,7 +25,8 @@ function wpsh_enqueue_styles() {
      );
 }
 add_action( 'wp_enqueue_scripts', 'wpsh_enqueue_styles', 10 );
-
+ */
+ 
 /* ==========================================================
    Scripts
    ========================================================== */
@@ -33,7 +34,7 @@ add_action( 'wp_enqueue_scripts', 'wpsh_enqueue_styles', 10 );
  * Enqueue frontend scripts.
  *
  * @return void
- */
+
 function wpsh_enqueue_scripts() {
 
      wp_enqueue_script(
@@ -45,3 +46,4 @@ function wpsh_enqueue_scripts() {
      );
 }
 add_action( 'wp_enqueue_scripts', 'wpsh_enqueue_scripts', 10 );
+ */

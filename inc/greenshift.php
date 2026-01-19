@@ -24,9 +24,9 @@ function wpsh_greenshift_body_classes( $classes ) {
 }
 
 /* ==========================================================
-   Greenshift Night Mode - How to prevent Style flashing
+   Greenshift Custom Breakpoints
    ========================================================== */
-/* Greenshift Custom Breakpoints :
+/* 
 // via https://greenshiftwp.com/documentation/for-developers/theme-integration-with-greenshift/
 add_filter('greenshift_responsive_breakpoints', function($array){
 	return array(
