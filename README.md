@@ -1,4 +1,4 @@
-<img src="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/img/wp-sniphub-logo.svg" alt="logo WP-SnipHub" width="200" height="auto"/>
+<img src="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/img/wp-sniphub-github-banner-1544x500px.png" alt="WP-SnipHub banner" width="auto" height="auto"/>
 
 # WPSnipHub
 
@@ -148,7 +148,8 @@ wp-sniphub/
 │ custom-admin.php         │ 50         │ Admin customization                       │
 │ custom-favicon.php       │ 15         │ Customizing the favicon                   │
 │ hooks.php                │ 45         │ Custom hooks (actions/filters)            │
-│ scripts.php              │ 40         │ Loading CSS/JS                            │
+│ scripts.php              │ 40         │ Loading JS                                │
+│ styles.php               │ 40         │ Loading CSS                               │
 │ performance.php          │ 45         │ Performance improvements                  │
 │ cleanup.php              │ 35         │ WordPress cleanup                         │
 │ custom-post-types.php    │ 30         │ Declaration of Custom Post Types          │
@@ -189,7 +190,7 @@ To ensure that each module:
 ### 2. Minimum Module Structure
 Each module must be a single PHP file located in:
 
-/inc/nom-du-module.php
+/inc/module-name.php
 
 Recommended header:
 ```php
@@ -210,7 +211,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 wpsh_
 
 This prefix must be used consistently for:
-
+```
 ┌─────────────────────┬─────────────────────────────┐
 │ Type                │ Correct example             │
 ├─────────────────────┼─────────────────────────────┤
@@ -220,7 +221,7 @@ This prefix must be used consistently for:
 │ Constant            │ WPSH_OPTION_NAME            │
 │ Class               │ WPSH_Module_Example         │
 └─────────────────────┴─────────────────────────────┘
-
+```
 Plugin Check error cause:
 ```php
 <?php
@@ -301,7 +302,7 @@ esc_html__( 'My string', 'wp-sniphub' );
 
 ### 7. Output safety (required escaping)
 General rule: All HTML output must be escaped.
-
+```
 ┌─────────────────────┬────────────────┐
 │ Context             │ Function       │
 ├─────────────────────┼────────────────┤
@@ -310,17 +311,17 @@ General rule: All HTML output must be escaped.
 │ URL                 │ esc_url()      │
 │ Translated text     │ esc_html__()   │
 └─────────────────────┴────────────────┘
-
+```
 Incorrect:
 ```php
 <?php
-_e( 'Largeur maximale', 'wp-sniphub' );
+_e( 'Maximum width', 'wp-sniphub' );
 ```
 
 Solution:
 ```php
 <?php
-esc_html_e( 'Largeur maximale', 'wp-sniphub' );
+esc_html_e( 'Maximum width', 'wp-sniphub' );
 ```
 
 ---
@@ -349,7 +350,7 @@ wp_date( 'Y' );
 Incorrect:
 ```php
 <?php
-esc_html__( 'Error', 'gravityforms' ); //Exemple pour Gravity Forms
+esc_html__( 'Error', 'gravityforms' ); //Example for Gravity Forms
 function who_change_error_message() {}
 ```
 
