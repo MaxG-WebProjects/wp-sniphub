@@ -2,25 +2,59 @@
 All notable changes to **WPSnipHub** are documented in this file.  
 This project follows WordPress.org coding standards and GitHub best practices.
 
----
-
-## [Unreleased] – 2026-01-19
-### Fixed
-- **Greenshift module**: Add a correction to the title of Greenshift Custom Breakpoints's function 
-- **Scripts module**: Commented out the default script enqueue to prevent loading a non-existent `main.js` file.
+## Credits
+Thanks to all contributors who helped improve WPSnipHub.
 
 ---
 
-## [Unreleased] – 2026-01-17
+## [1.2.5] – 2026-01-25
+### Added
+- Styles module to manage CSS independently of the scripts.
+- Dashicon for each module title.
+- Instructions for external HTTP requests hardening - See it in security module (thanks to @ozgursar for his related LinkedIn's post).
+
 ### Changed
-- The extension's visual appearance has been changed on the GitHub page. The logo has been replaced with a banner.
+- Split the scripts module to begin the CSS styles.
+- wp-sniphub.php and wpsh-admin.css to include and display Dashicons for each module title.
+- All favicons files with **WPSnipHub** logo instead of my own site logo.
+
+### Fixed
+- Fixed an issue where the browser tab notification emoji was displayed incorrectly or as plain text in some environments (thanks to @valentin-grenier).
+  - Improved reliability of the browser tab title animation when the page loses focus.
+
+### Technical details
+- Replaced a raw UTF-8 emoji in inline JavaScript with explicit Unicode escape sequences.
+  - This prevents character encoding issues caused by PHP → JavaScript injection and ensures consistent rendering across browsers, servers, and build environments.
 
 ---
 
-## [Unreleased] – 2026-01-16
+## [1.2.4] – 2026-01-24
+### Added
+- Introduced the `WPSH_VERSION` constant to centralize plugin version management.
+- Added `wpsh_get_modules()` as the single source of truth for module definitions.
+- Enabled extensibility of modules via the `wpsh_modules` filter.
+- Added comprehensive PHPDoc blocks to improve readability and maintainability.
+
+### Changed
+- Refactored module architecture to remove reliance on global variables.
+- Split the former “Scripts and styles” module into two distinct modules:
+  - Scripts
+  - Styles
+- Improved admin menu icon loading with safer SVG handling.
+- Centralized and standardized admin CSS versioning.
+- Improved validation, sanitization, and permission checks across the admin interface.
+
 ### Fixed
-- Fixed browser tab notification emoji encoding issue. Fixes an encoding issue where the emoji used in the browser tab notification
-was rendered as plain text instead of an icon.
+- Resolved multiple Plugin Check warnings related to:
+  - global namespace pollution
+  - missing capability checks
+  - insufficient data sanitization
+  - i18n compliance
+- Prevented potential file loading errors in admin assets.
+
+### Security
+- Hardened admin form handling using nonces and strict capability checks.
+- Ensured all user inputs are properly sanitized before processing.
 
 ---
 

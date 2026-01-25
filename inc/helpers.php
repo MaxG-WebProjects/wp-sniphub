@@ -113,7 +113,7 @@ function wpsh_is_subpage( $parent_id = null ) {
 /*
  * Debug entry point (no output) //safe WordPress.org
  *
- * @param mixed $var Donnée à inspecter.
+ * @param mixed $var Data to inspect.
  * @return void
  */
 function wpsh_debug_log( $var ) {

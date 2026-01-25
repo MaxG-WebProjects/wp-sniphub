@@ -4,8 +4,8 @@ Tags: hub, code snippets, scripts and styles management, dashboard customization
 Author: @maxcgparis
 Author URI: https://maxgremez.com/
 Plugin URI: https://github.com/MaxG-WebProjects/wp-sniphub
-Version: 1.2.0
-Stable tag: 1.2.0
+Version: 1.2.5
+Stable tag: 1.2.5
 Requires at least: 6.7
 Tested up to: 6.9
 Requires PHP: 8.0
@@ -34,19 +34,13 @@ Main features include:
 
 The plugin follows WordPress coding standards and best practices.
 
-> [!TIP]
->
-> **WPSnipHub** is a modular hub for managing custom WordPress snippets.
-> - Each feature lives in its own module and can be enabled or disabled independently from the Dashboard.
-> - Developers or advanced users may also customize or comment out code directly inside a module if required.
-> - This allows you to keep your site clean, lightweight, and fully tailored to your needs.
-> - You can also create your own modules by following the [Module Creation Guidelines](#guidelines-for-wpsniphub-module-creation).
-
 ---
 
 == Installation ==
+You can install WP SnipHub by downloading the ZIP file from the latest GitHub release.
+GitHub automatically provides a source archive for each release tag.
 
-1. Upload the `wp-sniphub-main` directory to `/wp-content/plugins/`
+1. Upload the `wp-sniphub` directory to `/wp-content/plugins/`
 2. Activate the plugin through the WordPress admin panel
 3. Open **WPSnipHub** from the admin menu
 4. Enable or disable modules as needed
@@ -92,6 +86,7 @@ wp-sniphub/
 │   ├── custom-favicon.php
 │   ├── hooks.php
 │   ├── scripts.php
+│   ├── styles.php
 │   ├── performance.php
 │   ├── cleanup.php
 │   ├── custom-post-types.php
@@ -175,16 +170,15 @@ To ensure that each module:
 - passes Plugin Check without critical errors
 - facilitates easy adoption
 - evolves without technical debt
-- can be disabled via **WPSnipHub**
+- can be disabled via WPSnipHub
 - is compatible with WordPress.org. Even though **WPSnipHub** is not intended to be published on the official plugin repository
 
 ---
 
 ### 2. Minimum Module Structure
+Each module must be a single PHP file located in:
 
-> [!NOTE]
-> Each module must be a single PHP file located in:
-> /inc/module.php
+/inc/nom-du-module.php
 
 Recommended header:
 ```php
@@ -202,12 +196,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 ---
 
 ### 3. Prefix everything that is global
-
-> [!IMPORTANT]
-> wpsh_
+wpsh_
 
 This prefix must be used consistently for:
-```
+
 ┌─────────────────────┬─────────────────────────────┐
 │ Type                │ Correct example             │
 ├─────────────────────┼─────────────────────────────┤
@@ -217,7 +209,7 @@ This prefix must be used consistently for:
 │ Constant            │ WPSH_OPTION_NAME            │
 │ Class               │ WPSH_Module_Example         │
 └─────────────────────┴─────────────────────────────┘
-```
+
 Plugin Check error cause:
 ```php
 <?php
@@ -254,11 +246,9 @@ function wpsh_register_cpt() {
 ---
 
 ### 5. Use of anonymous functions (closures)
-
-> [!NOTE]
-> Anonymous functions are only permitted for:
-> - very simple filters
-> - direct return (__return_true, etc.)
+Anonymous functions are only permitted for:
+- very simple filters
+- direct return (__return_true, etc.)
 
 To avoid:
 ```php
@@ -281,9 +271,7 @@ function wpsh_init_module() {
 ---
 
 ### 6. Internationalization (i18n)
-
-> [!IMPORTANT]
-> Always provide the text domain: wp-sniphub.
+Always provide the text domain: wp-sniphub
 
 Incorrect:
 ```php
@@ -302,7 +290,7 @@ esc_html__( 'My string', 'wp-sniphub' );
 
 ### 7. Output safety (required escaping)
 General rule: All HTML output must be escaped.
-```
+
 ┌─────────────────────┬────────────────┐
 │ Context             │ Function       │
 ├─────────────────────┼────────────────┤
@@ -311,7 +299,7 @@ General rule: All HTML output must be escaped.
 │ URL                 │ esc_url()      │
 │ Translated text     │ esc_html__()   │
 └─────────────────────┴────────────────┘
-```
+
 Incorrect:
 ```php
 <?php
@@ -344,9 +332,8 @@ wp_date( 'Y' );
 
 ### 9. Best practices for third-party plugins
 
-> [!IMPORTANT]
-> - Always use the WPSH prefix, even in third-party hooks.
-> - Never use the third-party plugin's text domain.
+- Always use the WPSH prefix, even in third-party hooks.
+- Never use the third-party plugin's text domain.
 
 Incorrect:
 ```php

@@ -1,11 +1,33 @@
 /* ==========================================================
-   WPSnipHub - Logo
+   WPSnipHub - Header Banner
    ========================================================== */
+.wpsh-header-banner {
+	background: #ffffff;
+	border-radius: 6px;
+	border: 1px solid #dcdcde;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+	padding: 14px 20px;
+	margin-top: 2rem;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.wpsh-header-banner-left {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
 .wpsh-title {
 	display: flex;
 	align-items: center;
 	gap: 16px;
-	margin-bottom: 2rem;
+	margin: 0;
+	flex-shrink: 0;
 }
 
 .wpsh-title-text {
@@ -16,8 +38,48 @@
 .wpsh-title-image {
 	max-width: 12.5rem;
 	height: auto;
-	margin: 0.8rem;
+	display: block;
 }
+
+.wpsh-header-banner-description {
+	margin: 0;
+	font-size: 13px;
+	color: #646970;
+	line-height: 1.5;
+}
+
+.wpsh-header-banner-actions {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+.wpsh-header-banner-actions .button {
+	min-width: auto;
+	max-width: none;
+}
+
+.wpsh-notice-fit {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.wpsh-module-icon {
+	width: 28px;
+	height: 28px;
+	border-radius: 6px;
+	background-color: rgba(0,0,0,.06);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #1d2327;
+}
+
+.wpsh-module-icon svg {
+	width: 16px;
+	height: 16px;
+}
+
 
 /* ==========================================================
    General layout
@@ -25,7 +87,7 @@
 .wpsh-wrapper {
 	box-sizing: border-box;
 	max-width: 1600px;
-	margin: 0 auto;
+	margin: 0 15px 0 0;
 }
 
 .wpsh-wrapper *,
@@ -68,6 +130,18 @@
 	justify-content: space-between;
 	padding: 14px 16px;
 	border-bottom: 1px solid #eee;
+	gap: 12px;
+}
+
+.wpsh-module-icon {
+	font-size: 20px;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #2271b1;
+	flex-shrink: 0;
 }
 
 .wpsh-card-title {
@@ -75,6 +149,7 @@
 	font-size: 15px;
 	font-weight: 600;
 	color: #2271b1;
+	flex: 1;
 }
 
 /* ==========================================================
@@ -243,5 +318,22 @@
 @media (max-width: 1024px) {
 	.wpsh-wrapper form {
 		grid-template-columns: 1fr;
+	}
+
+	.wpsh-header-banner {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+	}
+
+	.wpsh-header-banner-actions {
+		align-self: flex-end;
+		width: auto;
+	}
+
+	.wpsh-header-banner-actions .button {
+		width: auto !important;
+		min-width: auto !important;
+		max-width: none !important;
 	}
 }

@@ -158,7 +158,8 @@ add_action('admin_notices', function () {
 	}
 
 	// Tip: Customize the message below to suit your project
-	$message = sprintf('👋 Bonjour %s, WPSnipHub est bien actif.', $name);
+	/* translators: %s: User name */
+	$message = sprintf( __( 'Bonjour %s, WPSnipHub est bien actif.', 'wp-sniphub' ), $name );
 
 	// Displays a collapsible WordPress <success> banner
 	printf(
