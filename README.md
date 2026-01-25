@@ -210,7 +210,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 wpsh_
 
 This prefix must be used consistently for:
-
+```
 ┌─────────────────────┬─────────────────────────────┐
 │ Type                │ Correct example             │
 ├─────────────────────┼─────────────────────────────┤
@@ -220,7 +220,7 @@ This prefix must be used consistently for:
 │ Constant            │ WPSH_OPTION_NAME            │
 │ Class               │ WPSH_Module_Example         │
 └─────────────────────┴─────────────────────────────┘
-
+```
 Plugin Check error cause:
 ```php
 <?php
@@ -301,7 +301,7 @@ esc_html__( 'My string', 'wp-sniphub' );
 
 ### 7. Output safety (required escaping)
 General rule: All HTML output must be escaped.
-
+```
 ┌─────────────────────┬────────────────┐
 │ Context             │ Function       │
 ├─────────────────────┼────────────────┤
@@ -310,7 +310,7 @@ General rule: All HTML output must be escaped.
 │ URL                 │ esc_url()      │
 │ Translated text     │ esc_html__()   │
 └─────────────────────┴────────────────┘
-
+```
 Incorrect:
 ```php
 <?php
