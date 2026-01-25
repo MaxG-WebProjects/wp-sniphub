@@ -148,7 +148,8 @@ wp-sniphub/
 │ custom-admin.php         │ 50         │ Admin customization                       │
 │ custom-favicon.php       │ 15         │ Customizing the favicon                   │
 │ hooks.php                │ 45         │ Custom hooks (actions/filters)            │
-│ scripts.php              │ 40         │ Loading CSS/JS                            │
+│ scripts.php              │ 40         │ Loading JS                                │
+│ styles.php               │ 40         │ Loading CSS                               │
 │ performance.php          │ 45         │ Performance improvements                  │
 │ cleanup.php              │ 35         │ WordPress cleanup                         │
 │ custom-post-types.php    │ 30         │ Declaration of Custom Post Types          │
