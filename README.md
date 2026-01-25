@@ -387,10 +387,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return void
  */
-function wpsh_nom_module_init() {
+function wpsh_module_name_init() {
     // Module Initialization
 }
-add_action( 'init', 'wpsh_nom_module_init' );
+add_action( 'init', 'wpsh_module_name_init' );
 
 /* ==========================================================
    Main functions
@@ -402,7 +402,7 @@ add_action( 'init', 'wpsh_nom_module_init' );
  * @param string $value Valeur à traiter.
  * @return string
  */
-function wpsh_nom_module_example( $value ) {
+function wpsh_module_name_example( $value ) {
     return esc_html( $value );
 }
 
@@ -416,7 +416,7 @@ function wpsh_nom_module_example( $value ) {
  * @param string $content Contenu.
  * @return string
  */
-function wpsh_nom_module_filter_example( $content ) {
+function wpsh_module_name_filter_example( $content ) {
     return $content;
 }
-add_filter( 'the_content', 'wpsh_nom_module_filter_example' );
+add_filter( 'the_content', 'wpsh_module_name_filter_example' );
