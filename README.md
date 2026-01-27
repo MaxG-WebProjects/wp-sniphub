@@ -44,7 +44,7 @@ The plugin follows WordPress coding standards and best practices.
 ---
 
 ## Installation
-You can install WP SnipHub by downloading the ZIP file from the latest GitHub release.
+You can install WP SnipHub by downloading the ZIP file from the latest <a href="https://github.com/MaxG-WebProjects/wp-sniphub/releases" alt="link to releases">release</a>.
 GitHub automatically provides a source archive for each release tag.
 
 1. Upload the `wp-sniphub` directory to `/wp-content/plugins/`
@@ -53,11 +53,14 @@ GitHub automatically provides a source archive for each release tag.
 4. Enable or disable modules as needed
 5. Save your configuration
 
+> [!NOTE]
+> Inspect the code snippets of each module before activating them to understand what functions they generate.
+
 ---
 
 ## Changelog
 
-See the full changelog in the dedicated file: [CHANGELOG.md](<a href="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/CHANGELOG.md" alt="link to file CHANGELOG.md">CHANGELOG.md</a>) for the complete history of changes.
+See the full changelog in the dedicated file: <a href="https://github.com/MaxG-WebProjects/wp-sniphub/blob/main/CHANGELOG.md" alt="link to file CHANGELOG.md">CHANGELOG.md</a> for the complete history of changes.
 
 ---
 
