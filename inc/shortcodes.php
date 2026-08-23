@@ -14,12 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
    ========================================================== */
 /*
 // via https://www.momofr.net/tips-tricks-afficher-lannee-en-cours-automatiquement/?sfw=pass1678445222
-// + https://stackoverflow.com/questions/20370582/display-current-year-in-wordpress
-// or via https://www.moyens.net/guide-wp/comment-ajouter-une-date-droit-dauteur-dynamique-dans-votre-pied/#rb-utiliser-un-code-personnalise
-// or via https://hager.media/dynamic-copyright-date-current-year-in-wordpress/
-* @return string
-// >> Shortcode : [year]
+// via https://stackoverflow.com/questions/20370582/display-current-year-in-wordpress
+// via https://www.moyens.net/guide-wp/comment-ajouter-une-date-droit-dauteur-dynamique-dans-votre-pied/#rb-utiliser-un-code-personnalise
+// via https://hager.media/dynamic-copyright-date-current-year-in-wordpress/
+// Usage: shortcode [year]
 */
+/**
+ * Displays the current year automatically.
+ *
+ * @return string
+ */
 function wpsh_display_year() {
 	return wp_date( 'Y' );
 }

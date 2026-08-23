@@ -1,10 +1,12 @@
 <?php
 /**
  * Scripts & Styles
+ *
+ * @package WPSnipHub
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-     exit;
+	exit;
 }
 
 /* ==========================================================
@@ -14,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Enqueue frontend styles.
  *
  * @return void
-
+ */
 function wpsh_enqueue_styles() {
 	$stylesheet_uri = apply_filters( 'wpsh_stylesheet_uri', get_stylesheet_uri() );
 
@@ -26,4 +28,3 @@ function wpsh_enqueue_styles() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'wpsh_enqueue_styles', 10 );
- */

@@ -10,18 +10,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* ==========================================================
-   Add custom image sizes in WordPress
+   Register custom image size settings and fields
    ========================================================== */
-/* 
+/*
 // via https://wp-umbrella.com/fr/tutorials/wordpress-image-sizes/#how-to-add-custom-image-sizes-in-wordpress
-+
-// Display image size on the media library screen (NOT USED)
-// via https://wordpress.stackexchange.com/questions/30894/display-image-size-in-media-library-screen
-+
-// READ THIS: https://wpmudev.com/blog/wordpress-image-sizes/
+// via https://wordpress.stackexchange.com/questions/30894/display-image-size-in-media-library-screen (not used)
+// via https://wpmudev.com/blog/wordpress-image-sizes/
 */
-
-// Saves custom settings
+/**
+ * Registers the custom image size settings and their admin fields.
+ *
+ * @return void
+ */
 function wpsh_register_custom_image_sizes() {
 	// On enregistre deux nouveaux réglages
 	register_setting( 'media', 'square_size_w', array( 'type' => 'integer', 'default' => 160 ) );
@@ -33,7 +33,7 @@ function wpsh_register_custom_image_sizes() {
 	// Added the "Square Size" field
 	add_settings_field(
 		'square_size',
-		__( 'Taille Carré', 'wp-sniphub' ),
+		__( 'Square Size', 'wp-sniphub' ),
 		'wpsh_render_square_size_fields',
 		'media',
 		'default'
@@ -42,7 +42,7 @@ function wpsh_register_custom_image_sizes() {
 	// Added the "Full HD Size" field
 	add_settings_field(
 		'fullhd_size',
-		__( 'Taille Full HD', 'wp-sniphub' ),
+		__( 'Full HD Size', 'wp-sniphub' ),
 		'wpsh_render_fullhd_size_fields',
 		'media',
 		'default'
@@ -50,46 +50,59 @@ function wpsh_register_custom_image_sizes() {
 }
 add_action( 'admin_init', 'wpsh_register_custom_image_sizes' );
 
+/* ==========================================================
+   Render the "Square" size fields
+   ========================================================== */
 /**
- * Displays the fields for the "Square" size
+ * Displays the fields for the "Square" size.
+ *
+ * @return void
  */
 function wpsh_render_square_size_fields() {
 	$w = get_option( 'square_size_w', 160 );
 	$h = get_option( 'square_size_h', 160 );
 	?>
-	<label for="square_size_w">
-		<?php echo esc_html__( 'Largeur maximale', 'wp-sniphub' ); ?>
-	</label>
-	<input name="square_size_w" type="number" step="1" min="0" id="square_size_w" value="<?php echo esc_attr( $w ); ?>" class="small-text" />
-	<br />
-	<label for="square_size_h">
-		<?php echo esc_html__( 'Hauteur maximale', 'wp-sniphub' ); ?>
-	</label>
-	<input name="square_size_h" type="number" step="1" min="0" id="square_size_h" value="<?php echo esc_attr( $h ); ?>" class="small-text" />
+	<fieldset>
+		<legend class="screen-reader-text"><span><?php esc_html_e( 'Square Size', 'wp-sniphub' ); ?></span></legend>
+		<label for="square_size_w"><?php esc_html_e( 'Maximum width', 'wp-sniphub' ); ?></label>
+		<input name="square_size_w" type="number" step="1" min="0" id="square_size_w" value="<?php echo esc_attr( $w ); ?>" class="small-text" />
+		<br />
+		<label for="square_size_h"><?php esc_html_e( 'Maximum height', 'wp-sniphub' ); ?></label>
+		<input name="square_size_h" type="number" step="1" min="0" id="square_size_h" value="<?php echo esc_attr( $h ); ?>" class="small-text" />
+	</fieldset>
 	<?php
 }
 
+/* ==========================================================
+   Render the "Full HD" size fields
+   ========================================================== */
 /**
- * Displays fields for "Full HD" size
+ * Displays fields for "Full HD" size.
+ *
+ * @return void
  */
 function wpsh_render_fullhd_size_fields() {
 	$w = get_option( 'fullhd_size_w', 1920 );
 	$h = get_option( 'fullhd_size_h', 1080 );
 	?>
-	<label for="fullhd_size_w">
-		<?php echo esc_html__( 'Largeur maximale', 'wp-sniphub' ); ?>
-	</label>
-	<input name="fullhd_size_w" type="number" step="1" min="0" id="fullhd_size_w" value="<?php echo esc_attr( $w ); ?>" class="small-text" />
-	<br />
-	<label for="fullhd_size_h">
-		<?php echo esc_html__( 'Hauteur maximale', 'wp-sniphub' ); ?>
-	</label>
-	<input name="fullhd_size_h" type="number" step="1" min="0" id="fullhd_size_h" value="<?php echo esc_attr( $h ); ?>" class="small-text" />
+	<fieldset>
+		<legend class="screen-reader-text"><span><?php esc_html_e( 'Full HD Size', 'wp-sniphub' ); ?></span></legend>
+		<label for="fullhd_size_w"><?php esc_html_e( 'Maximum width', 'wp-sniphub' ); ?></label>
+		<input name="fullhd_size_w" type="number" step="1" min="0" id="fullhd_size_w" value="<?php echo esc_attr( $w ); ?>" class="small-text" />
+		<br />
+		<label for="fullhd_size_h"><?php esc_html_e( 'Maximum height', 'wp-sniphub' ); ?></label>
+		<input name="fullhd_size_h" type="number" step="1" min="0" id="fullhd_size_h" value="<?php echo esc_attr( $h ); ?>" class="small-text" />
+	</fieldset>
 	<?php
 }
 
+/* ==========================================================
+   Declare the sizes for use in add_image_size()
+   ========================================================== */
 /**
- * Declares the sizes for use in add_image_size()
+ * Declares the sizes for use in add_image_size().
+ *
+ * @return void
  */
 function wpsh_add_custom_image_sizes() {
 	// Square Size

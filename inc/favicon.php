@@ -10,12 +10,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* ==========================================================
-   Favicon
+   Favicon hooks
    ========================================================== */
-/* via https://www.billerickson.net/favicon-dark-mode/
-// Hooks – we put them in very early for the front end, the admin panel, and the login page
+/*
+// via https://www.billerickson.net/favicon-dark-mode/
+// Hooks – we put them in very early for the front end, the admin panel, and the login page.
 */
-add_action( 'wp_head',    'wpsh_output_favicons', 1 );
+add_action( 'wp_head', 'wpsh_output_favicons', 1 );
 add_action( 'admin_head', 'wpsh_output_favicons', 1 );
 add_action( 'login_head', 'wpsh_output_favicons', 1 );
 
@@ -24,10 +25,12 @@ add_action( 'login_head', 'wpsh_output_favicons', 1 );
    ========================================================== */
 /**
  * Set this filter to false if you want to keep the Customizer icon.
+ *
+ * @return void
  */
 function wpsh_maybe_disable_wp_site_icon() {
 	if ( apply_filters( 'wpsh_disable_wp_site_icon', false ) ) {
-		remove_action( 'wp_head',    'wp_site_icon', 99 );
+		remove_action( 'wp_head', 'wp_site_icon', 99 );
 		remove_action( 'admin_head', 'wp_site_icon', 99 );
 		remove_action( 'login_head', 'wp_site_icon', 99 );
 	}
@@ -35,15 +38,20 @@ function wpsh_maybe_disable_wp_site_icon() {
 add_action( 'init', 'wpsh_maybe_disable_wp_site_icon' );
 
 /* ==========================================================
-   Base URLs & paths depuis ce fichier (inc/favicon.php)
+   Base URLs & paths for this file's favicons
    ========================================================== */
-/* via https://www.webtimiser.de/en/wordpress-favicon/#5-add-favicon-to-wordpress-manually
-//
+/*
+// via https://www.webtimiser.de/en/wordpress-favicon/#5-add-favicon-to-wordpress-manually
 */
+/**
+ * Base URLs & paths for this file's favicons.
+ *
+ * @return array Array of [ $base_url, $base_path ].
+ */
 function wpsh_favicons_base() {
-	// URL to /img/favicons/ from the plugin (regardless of the inc/ subfolder)
+	// URL to /img/favicons/ from the plugin (regardless of the inc/ subfolder).
 	$base_url  = trailingslashit( plugins_url( 'img/favicons', __DIR__ ) );
-	// Path to /img/favicons/
+	// Path to /img/favicons/.
 	$base_path = plugin_dir_path( __DIR__ ) . 'img/favicons/';
 	return [ $base_url, $base_path ];
 }
@@ -51,8 +59,11 @@ function wpsh_favicons_base() {
 /* ==========================================================
    Versioned URL
    ========================================================== */
-/*
- * Constructs a versioned (cache-busting) URL
+/**
+ * Constructs a versioned (cache-busting) URL.
+ *
+ * @param string $filename Favicon file name.
+ * @return string
  */
 function wpsh_favicon_url( $filename ) {
 	list( $base_url, $base_path ) = wpsh_favicons_base();
@@ -65,8 +76,13 @@ function wpsh_favicon_url( $filename ) {
 }
 
 /* ==========================================================
-   Favicon tags removed
+   Output favicon tags
    ========================================================== */
+/**
+ * Outputs the favicon <link> tags.
+ *
+ * @return void
+ */
 function wpsh_output_favicons() {
 
 	echo "\n<!-- Favicons by WPSnipHub -->\n";

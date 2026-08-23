@@ -12,16 +12,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 /* ==========================================================
    Disable Speculative Loading
    ========================================================== */
-// Christine Siembida (via LinkedIn) :
-// Disable Speculative Loading via the Speculation Rules API (WordPress v6.8)
+/*
+// via Christine Siembida (LinkedIn): disable Speculative Loading via the
+// Speculation Rules API (WordPress v6.8).
+*/
 add_filter( 'wp_speculation_rules_configuration', '__return_null' );
 
-/* ============================================================================
+/* ==========================================================
    Restrict the loading of the cookie consent banner to the 'Contact' page ONLY
-   ============================================================================ */
-/* 
-// will only be displayed on the page that loads cookies: those of Cloudflare Turnstile
-// via ChatGPT :
+   ========================================================== */
+/*
+// via ChatGPT
+// Will only be displayed on the page that loads cookies: those of Cloudflare Turnstile.
 
 add_action('wp_enqueue_scripts', 'control_pressidium_cookie_scripts', 100);
 function control_pressidium_cookie_scripts() {
@@ -60,14 +62,14 @@ function control_pressidium_cookie_scripts() {
 	}
 } */
 
-/* ============================================================================
-   Use Preload To Improve LCP If Image Is Necessary Above Fold 
-   ============================================================================ */
+/* ==========================================================
+   Use Preload To Improve LCP If Image Is Necessary Above Fold
+   ========================================================== */
 /*
 // via https://itchycode.com/use-preload-to-improve-lcp-if-image-is-necessary-above-fold/
-// + via https://www.artwai.com/preload-image-responsive-ameliorer-le-lcp/
-// + via https://wpalpha.io/how-to-preload-lcp-image-in-wordpress/
-// + via https://www.wppagebuilders.com/preload-images-wordpress/#preloading-image-in-gutenberg
+// via https://www.artwai.com/preload-image-responsive-ameliorer-le-lcp/
+// via https://wpalpha.io/how-to-preload-lcp-image-in-wordpress/
+// via https://www.wppagebuilders.com/preload-images-wordpress/#preloading-image-in-gutenberg
 // Preload a responsive image only on homepage
 >>>> DOES NOT WORK: causes a display bug with removal of external margins and duplicate content (logo)
 function preload_featured_image_home() {
@@ -80,7 +82,7 @@ add_action( 'wp_head', 'preload_featured_image_home', 90 );
 
 /*
 // via https://www.wppagebuilders.com/preload-images-wordpress/
-// + via https://docs.wp-rocket.me/article/1494-preload-largest-contentful-paint-image
+// via https://docs.wp-rocket.me/article/1494-preload-largest-contentful-paint-image
 function wpp_preloadimages() {
   echo '
   <link rel="preload" as="image" href="https://maxgremez.com/site/img/max-gremez-portrait-bw-362x420px-144dpi.webp" />
@@ -93,10 +95,10 @@ add_action( 'wp_head', 'wpp_preloadimages' );
 // <link rel="preload" href="https://yourdomain.com/your-lcp-image-mobile.jpg" as="image" media="(max-width: 480px)">
 // <link rel="preload" href="https://yourdomain.com/your-lcp-image-desktop.jpg" as="image" media="(min-width: 481px)">
 
-/* ====================================================================================
-   Set Fetchpriority to High for the >>Featured Image<< in WordPress (without a Plugin)
-   ==================================================================================== */
-/* 
+/* ==========================================================
+   Set Fetchpriority to High for the Featured Image in WordPress (without a Plugin)
+   ========================================================== */
+/*
 // via https://www.janinedalton.com/disable-lazy-loading-featured-image/
 >>>>> DISABLING FOLLOWING THE ADDITION OF THE 'Fetchpriority' FUNCTION IN WP ROCKET v3.16
 */

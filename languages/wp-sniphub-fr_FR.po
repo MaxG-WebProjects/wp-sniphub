@@ -1,0 +1,521 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the WPSnipHub package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WPSnipHub 1.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-23 11:57+0200\n"
+"PO-Revision-Date: 2026-08-23 12:00+0200\n"
+"Last-Translator: WPSnipHub\n"
+"Language-Team: Français\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: wp-sniphub.php:66
+msgid "Base Configuration"
+msgstr "Configuration de base"
+
+#: wp-sniphub.php:67
+msgid "Initial site configuration and dependencies."
+msgstr "Configuration initiale et dépendances du site."
+
+#: wp-sniphub.php:68
+msgid "Handles the site's basic settings, required dependencies, and global configuration."
+msgstr "Ce module gère les paramètres de base, les dépendances nécessaires et les configurations globales du site."
+
+#: wp-sniphub.php:73
+msgid "Scripts"
+msgstr "Scripts"
+
+#: wp-sniphub.php:74
+msgid "Script management."
+msgstr "Gestion des scripts."
+
+#: wp-sniphub.php:75
+msgid "Loads global JS files and optimizes their loading for specific pages."
+msgstr "Permet de charger les fichiers JS globaux et d'optimiser leur chargement en fonction de pages spécifiques."
+
+#: wp-sniphub.php:80
+msgid "Styles"
+msgstr "Styles"
+
+#: wp-sniphub.php:81
+msgid "Style management."
+msgstr "Gestion des styles."
+
+#: wp-sniphub.php:82
+msgid "Loads CSS files and optimizes their loading for specific pages."
+msgstr "Permet de charger les fichiers CSS et d'optimiser leur chargement en fonction de pages spécifiques."
+
+#: wp-sniphub.php:87
+msgid "Custom Post Types"
+msgstr "Types de contenu personnalisés"
+
+#: wp-sniphub.php:88
+msgid "Defines Custom Post Types (CPT)."
+msgstr "Définition des Custom Post Types (CPT)."
+
+#: wp-sniphub.php:89
+msgid "Adds and configures specific content types (e.g. Portfolio, Recipes, etc.)."
+msgstr "Ajoute et configure des types de contenu spécifiques (ex : Portfolio, Recettes, etc.)."
+
+#: wp-sniphub.php:94
+msgid "Custom Taxonomies"
+msgstr "Définition des taxonomies personnalisées"
+
+#: wp-sniphub.php:95
+msgid "Defines custom taxonomy types."
+msgstr "Définition des types de taxonomies personnalisées."
+
+#: wp-sniphub.php:96
+msgid "Adds and configures custom taxonomy types for Custom Post Types: categories and/or tags."
+msgstr "Ajoute et configure des types de taxonomies personnalisées aux Custom Post Types : des catégories et/ou des étiquettes."
+
+#: wp-sniphub.php:101
+msgid "Useful Shortcodes"
+msgstr "Ajout de codes courts utiles pour le site"
+
+#: wp-sniphub.php:102
+msgid "Create shortcodes whose output is displayed on the site."
+msgstr "Créer des codes courts dont la fonction sera affichée sur le site."
+
+#: wp-sniphub.php:103
+msgid "Adds custom shortcodes (e.g. automatically display the current year in the footer)."
+msgstr "Permet de créer des codes courts (ex : Afficher l'année en cours automatiquement dans le footer)."
+
+#: wp-sniphub.php:108
+msgid "Backend / Frontend Hardening"
+msgstr "Ajout de sécurisations backend / frontend"
+
+#: wp-sniphub.php:109
+msgid "Adds backend / frontend security hardening."
+msgstr "Ajout de sécurisations backend / frontend."
+
+#: wp-sniphub.php:110
+msgid "Adds security measures not natively present in WordPress (e.g. blocking file editing)."
+msgstr "Permet d'ajouter des sécurités à WordPress, non présentes nativement (ex : Bloquer l'édition de fichiers)."
+
+#: wp-sniphub.php:115
+msgid "Custom Image Sizes"
+msgstr "Ajout de tailles d'images personnalisées"
+
+#: wp-sniphub.php:116
+msgid "Adds extra custom image sizes."
+msgstr "Ajouter des tailles d'images supplémentaires et personnalisées."
+
+#: wp-sniphub.php:117
+msgid "Adds image sizes not natively available in WordPress (e.g. Full HD size - 1920x1080px)."
+msgstr "Permet de créer de tailles d'images à WordPress, non présentes nativement (ex : Taille Full HD - 1920px x 1080px)."
+
+#: wp-sniphub.php:122
+msgid "Disable Native Features"
+msgstr "Désactivation de certaines fonctions natives"
+
+#: wp-sniphub.php:123
+msgid "Disables certain WordPress features."
+msgstr "Désactiver certaines fonctions de WordPress."
+
+#: wp-sniphub.php:124
+msgid "Disables features not needed by the site (e.g. disabling emojis, disabling Duotone SVG filters)."
+msgstr "Permet de désactiver des fonctions non utiles au site (ex : Désactiver les emojis, désactiver les filtres SVG Duotone)."
+
+#: wp-sniphub.php:129
+msgid "Custom Hooks and Filters"
+msgstr "Hooks et filtres personnalisés"
+
+#: wp-sniphub.php:130
+msgid "Adds custom hooks and filters."
+msgstr "Ajout de hooks et filtres personnalisés."
+
+#: wp-sniphub.php:131
+msgid "Adds custom PHP hooks and filters (e.g. browser tab notification)."
+msgstr "Permet d'ajouter des hooks et des filtres PHP personnalisés (ex : Notification dans la barre du navigateur)."
+
+#: wp-sniphub.php:136
+msgid "Utility Functions"
+msgstr "Fonctions utilitaires"
+
+#: wp-sniphub.php:137
+msgid "Adds reusable utility functions."
+msgstr "Ajoute des fonctions utilitaires réutilisables."
+
+#: wp-sniphub.php:138
+msgid "Adds reusable utility functions (e.g. retrieving a content excerpt)."
+msgstr "Permet d'ajouter des fonctions utilitaires réutilisables (ex : Récupérer un extrait de contenu)."
+
+#: wp-sniphub.php:143
+msgid "WooCommerce Customization"
+msgstr "Personnalisation de Woocommerce"
+
+#: wp-sniphub.php:144
+msgid "Adds functions to WooCommerce."
+msgstr "Ajouter des fonctions à Woocommerce."
+
+#: wp-sniphub.php:145
+msgid "Adds/modifies WooCommerce functions (e.g. redirects, autofill)."
+msgstr "Permet d'ajouter/modifier des fonctions à Woocommerce (ex : Redirections, Remplissage automatique)."
+
+#: wp-sniphub.php:150
+msgid "Post Functions"
+msgstr "Ajout de fonctions pour les articles"
+
+#: wp-sniphub.php:151
+msgid "Adds functions to posts."
+msgstr "Ajouter des fonctions aux articles."
+
+#: wp-sniphub.php:152
+msgid "Adds/modifies post functions (e.g. copyright notice, maximum word count for post titles)."
+msgstr "Permet d'ajouter/modifier des fonctions aux articles (ex : Copyright, Nombre maximum de mots pour les titres de publications)."
+
+#: wp-sniphub.php:157
+msgid "Login Page Customization"
+msgstr "Personnalisation de la page de connexion"
+
+#: wp-sniphub.php:158
+msgid "Customizes the login page appearance."
+msgstr "Personnaliser l'apparence de la page de connexion."
+
+#: wp-sniphub.php:159
+msgid "Adds/modifies the login page appearance (e.g. background, colors, logo, etc.)."
+msgstr "Permet d'ajouter/modifier l'apparence de la page de connexion (ex : Arrière-plan, couleurs, logo, etc.)."
+
+#: wp-sniphub.php:164
+msgid "Dashboard Interface Customization"
+msgstr "Personnalisation de l'interface du Dashboard"
+
+#: wp-sniphub.php:165
+msgid "Customizes the Dashboard appearance."
+msgstr "Personnaliser l'apparence du Dashboard."
+
+#: wp-sniphub.php:166
+msgid "Adds changes to the Dashboard (e.g. custom color palette, changing the Gravatar, footer text)."
+msgstr "Permet d'ajouter des modifications au Dashboard (ex : Palette de couleurs personnalisée, changer le Gravatar, texte de pied de page)."
+
+#: wp-sniphub.php:171
+msgid "Additional Media Types"
+msgstr "Ajout de types de médias"
+
+#: wp-sniphub.php:172
+msgid "Adds media types beyond jpeg, png, pdf, etc."
+msgstr "Ajouter des médias autres que jpeg, png, pdf, etc."
+
+#: wp-sniphub.php:173
+msgid "Adds media types not natively supported by WordPress (e.g. SVG, JSON)."
+msgstr "Permet d'ajouter des types de médias non pris en charge nativement par WordPress (ex : SVG, JSON)."
+
+#: wp-sniphub.php:178
+msgid "Gravity Forms Customization"
+msgstr "Personnalisation du plugin Gravity Forms"
+
+#: wp-sniphub.php:179
+msgid "Customizes the Gravity Forms contact form plugin."
+msgstr "Personnaliser le plugin de formulaire de contact Gravity Forms."
+
+#: wp-sniphub.php:180
+msgid "Adds/modifies plugin functions (e.g. disabling native CSS, fixing accessibility)."
+msgstr "Permet d'ajouter/modifier des fonctions du plugin (ex : Désactiver les CSS natifs, corriger l'accessibilité)."
+
+#: wp-sniphub.php:185
+msgid "Custom Favicon Management"
+msgstr "Gestion du favicon personnalisé"
+
+#: wp-sniphub.php:186
+msgid "Customizes favicon formats."
+msgstr "Personnaliser les formats du favicon."
+
+#: wp-sniphub.php:187
+msgid "Adds additional favicons (e.g. ICO, SVG, dark mode)."
+msgstr "Permet d'ajouter des favicons supplémentaires (ex : ICO, SVG, Darkmode)."
+
+#: wp-sniphub.php:192
+msgid "Performance Optimizations"
+msgstr "Optimisations de performance"
+
+#: wp-sniphub.php:193
+msgid "Adds performance optimizations."
+msgstr "Ajout d'optimisations de performance."
+
+#: wp-sniphub.php:194
+msgid "Adds/modifies functions to improve loading performance (e.g. disabling Speculative Loading, preloading above-the-fold images to improve LCP)."
+msgstr "Permet d'ajouter/modifier des fonctions pour augmenter les performances de chargement (ex : Désactiver Speculative Loading, utiliser la pré-loading sur les images affichées au-dessus de la ligne de flottaison pour améliorer LCP)."
+
+#: wp-sniphub.php:199
+msgid "GreenShift Customization"
+msgstr "Personnalisation du plugin GreenShift"
+
+#: wp-sniphub.php:200
+msgid "Adds functions to the GreenShift plugin."
+msgstr "Ajout des fonctions au plugin GreenShift."
+
+#: wp-sniphub.php:201
+msgid "Adds/modifies GreenShift plugin functions (e.g. custom breakpoints, dark mode)."
+msgstr "Permet d'ajouter/modifier des fonctions du plugin GreenShift (ex : Points de rupture personnalisés, Darkmode)."
+
+#: wp-sniphub.php:215
+msgid "Foundations & Security"
+msgstr "Fondations & Sécurité"
+
+#: wp-sniphub.php:216
+msgid "Content"
+msgstr "Contenu"
+
+#: wp-sniphub.php:217
+msgid "Appearance & Interface"
+msgstr "Apparence & Interface"
+
+#: wp-sniphub.php:218
+msgid "Assets & Performance"
+msgstr "Assets & Performance"
+
+#: wp-sniphub.php:219
+msgid "Third-Party Integrations"
+msgstr "Intégrations tierces"
+
+#: wp-sniphub.php:220
+msgid "Other"
+msgstr "Autres"
+
+#: wp-sniphub.php:310
+msgid "Enabled WPSnipHub modules."
+msgstr "Modules WPSnipHub activés."
+
+#: wp-sniphub.php:429
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Vous n'avez pas les permissions nécessaires pour accéder à cette page."
+
+#: wp-sniphub.php:438
+msgid "WPSnipHub – Module Management"
+msgstr "WPSnipHub – Gestion des modules"
+
+#: wp-sniphub.php:440
+msgid "WPSnipHub Logo"
+msgstr "Logo WPSnipHub"
+
+#: wp-sniphub.php:443
+msgid "A dev-oriented central and modular hub for code snippets and utility functions of WordPress sites."
+msgstr "Un hub central et modulaire orienté développement pour les extraits de code et les fonctions utilitaires des sites WordPress."
+
+#: wp-sniphub.php:449
+msgid "Deleting WPSnipHub permanently removes its settings and all content created via its custom post types and taxonomies (portfolio, testimonials, events, categories, etc.) — this cannot be undone."
+msgstr "La suppression de WPSnipHub retire définitivement ses réglages ainsi que tout le contenu créé via ses types de contenu et taxonomies personnalisés (portfolio, témoignages, événements, catégories, etc.) — cette action est irréversible."
+
+#: wp-sniphub.php:457
+msgid "Save"
+msgstr "Enregistrer"
+
+#: inc/cleanup.php:78
+msgid "RSS disabled"
+msgstr "RSS désactivé"
+
+#: inc/custom-admin.php:29
+msgid "Color Scheme"
+msgstr "Color Scheme"
+
+#: inc/custom-admin.php:144
+#, php-format
+msgid "Powered by %1$s | Designed and built by Max Gremez | %2$s"
+msgstr "Propulsé par %1$s | Pensé, créé et conçu par Max Gremez | %2$s"
+
+#: inc/custom-admin.php:194
+#, php-format
+msgid "Hello %s, WPSnipHub is active."
+msgstr "Bonjour %s, WPSnipHub est bien actif."
+
+#: inc/custom-login.php:78
+msgid "Max Gremez | Web & Digital Marketing Project Manager"
+msgstr "Max Gremez | Responsable de Projets Web & Marketing Digital"
+
+#: inc/custom-login.php:91
+msgid "That's not the right combination"
+msgstr "Ce n'est pas la bonne combinaison"
+
+#: inc/custom-post-types.php:23
+msgid "Portfolio"
+msgstr "Portfolio"
+
+#: inc/custom-post-types.php:24
+msgid "Portfolios"
+msgstr "Portfolios"
+
+#: inc/custom-post-types.php:31
+msgid "Testimonial"
+msgstr "Témoignage"
+
+#: inc/custom-post-types.php:32
+msgid "Testimonials"
+msgstr "Témoignages"
+
+#: inc/custom-post-types.php:39
+msgid "Event"
+msgstr "Événement"
+
+#: inc/custom-post-types.php:40
+msgid "Events"
+msgstr "Événements"
+
+#: inc/custom-post-types.php:65
+msgid "Add New"
+msgstr "Ajouter"
+
+#: inc/custom-post-types.php:67
+#, php-format
+msgctxt "custom post type label"
+msgid "Add new %s"
+msgstr "Ajouter un %s"
+
+#: inc/custom-post-types.php:69 inc/taxonomies.php:60
+#, php-format
+msgid "Edit %s"
+msgstr "Modifier %s"
+
+#: inc/custom-post-types.php:71
+#, php-format
+msgid "New %s"
+msgstr "Nouveau %s"
+
+#: inc/custom-post-types.php:73
+#, php-format
+msgid "View %s"
+msgstr "Voir %s"
+
+#: inc/custom-post-types.php:75 inc/taxonomies.php:54
+#, php-format
+msgid "Search %s"
+msgstr "Rechercher %s"
+
+#: inc/custom-post-types.php:77
+#, php-format
+msgid "No %s found"
+msgstr "Aucun %s trouvé"
+
+#: inc/custom-post-types.php:79
+#, php-format
+msgid "No %s found in Trash"
+msgstr "Aucun %s dans la corbeille"
+
+#: inc/gravity-forms.php:37
+msgid "There was a problem with your submission. Please check the fields below."
+msgstr "Un problème est survenu avec votre envoi. Veuillez vérifier les champs ci-dessous."
+
+#: inc/image-size.php:36 inc/image-size.php:66
+msgid "Square Size"
+msgstr "Taille Carré"
+
+#: inc/image-size.php:45 inc/image-size.php:89
+msgid "Full HD Size"
+msgstr "Taille Full HD"
+
+#: inc/image-size.php:67 inc/image-size.php:90
+msgid "Maximum width"
+msgstr "Largeur maximale"
+
+#: inc/image-size.php:70 inc/image-size.php:93
+msgid "Maximum height"
+msgstr "Hauteur maximale"
+
+#: inc/publications.php:31
+msgid "Error: your post title exceeds the maximum number of allowed words."
+msgstr "Erreur : le titre de votre article dépasse le nombre maximum de mots autorisé."
+
+#: inc/publications.php:34 inc/publications.php:64
+msgid "Publishing error"
+msgstr "Erreur de publication"
+
+#: inc/publications.php:61
+msgid "Error: your post content does not meet the minimum word count."
+msgstr "Erreur : le contenu de votre article n'atteint pas le nombre minimum de mots requis."
+
+#: inc/publications.php:88
+msgid "This article is copyright"
+msgstr "Cet article est protégé par le copyright"
+
+#: inc/publications.php:112
+msgid "This is some custom content I'm adding to the post editor because I hate re-typing it."
+msgstr "Voici un contenu personnalisé que j'ajoute à l'éditeur d'articles pour éviter d'avoir à le retaper."
+
+#: inc/publications.php:166
+msgid "You must select a Featured Image. The post has been saved as draft."
+msgstr "Vous devez sélectionner une image mise en avant. L'article a été enregistré en tant que brouillon."
+
+#: inc/settings-io.php:42
+msgid "Settings Backup"
+msgstr "Sauvegarde des réglages"
+
+#: inc/settings-io.php:61
+msgid "Export the current settings to a JSON file, or import a previously exported file."
+msgstr "Exportez les réglages actuels dans un fichier JSON, ou importez un fichier précédemment exporté."
+
+#: inc/settings-io.php:65
+msgid "Export Settings"
+msgstr "Exporter les réglages"
+
+#: inc/settings-io.php:72
+msgid "Settings file (.json)"
+msgstr "Fichier de réglages (.json)"
+
+#: inc/settings-io.php:75
+msgid "Import Settings"
+msgstr "Importer les réglages"
+
+#: inc/settings-io.php:87 inc/settings-io.php:111
+msgid "You do not have sufficient permissions to perform this action."
+msgstr "Vous n'avez pas les permissions nécessaires pour effectuer cette action."
+
+#: inc/settings-io.php:171
+msgid "Settings imported successfully."
+msgstr "Réglages importés avec succès."
+
+#: inc/settings-io.php:173
+msgid "Import failed: invalid file."
+msgstr "Échec de l'import : fichier invalide."
+
+#: inc/taxonomies.php:23
+msgid "Portfolio Category"
+msgstr "Catégorie de Portfolio"
+
+#: inc/taxonomies.php:24
+msgid "Portfolio Categories"
+msgstr "Catégories de Portfolio"
+
+#: inc/taxonomies.php:30
+msgid "Event Type"
+msgstr "Type d'événement"
+
+#: inc/taxonomies.php:31
+msgid "Event Types"
+msgstr "Types d'événements"
+
+#: inc/taxonomies.php:56
+#, php-format
+msgid "All %s"
+msgstr "Toutes les %s"
+
+#: inc/taxonomies.php:57
+msgid "Parent Category"
+msgstr "Catégorie parente"
+
+#: inc/taxonomies.php:58
+msgid "Parent Category:"
+msgstr "Catégorie parente :"
+
+#: inc/taxonomies.php:62
+#, php-format
+msgid "Update %s"
+msgstr "Mettre à jour %s"
+
+#: inc/taxonomies.php:64
+#, php-format
+msgctxt "custom taxonomy label"
+msgid "Add new %s"
+msgstr "Ajouter une nouvelle %s"
+
+#: inc/taxonomies.php:66
+#, php-format
+msgid "New %s name"
+msgstr "Nouveau nom de %s"
+

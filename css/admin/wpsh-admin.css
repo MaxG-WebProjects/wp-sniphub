@@ -2,7 +2,7 @@
    WPSnipHub - Header Banner
    ========================================================== */
 .wpsh-header-banner {
-	background: #ffffff;
+	background: #fff;
 	border-radius: 6px;
 	border: 1px solid #dcdcde;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -48,38 +48,14 @@
 	line-height: 1.5;
 }
 
-.wpsh-header-banner-actions {
-	flex-shrink: 0;
-	display: flex;
-	align-items: center;
-}
+@media (max-width: 1024px) {
 
-.wpsh-header-banner-actions .button {
-	min-width: auto;
-	max-width: none;
+	.wpsh-header-banner {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+	}
 }
-
-.wpsh-notice-fit {
-  width: fit-content;
-  max-width: 100%;
-}
-
-.wpsh-module-icon {
-	width: 28px;
-	height: 28px;
-	border-radius: 6px;
-	background-color: rgba(0,0,0,.06);
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	color: #1d2327;
-}
-
-.wpsh-module-icon svg {
-	width: 16px;
-	height: 16px;
-}
-
 
 /* ==========================================================
    General layout
@@ -97,191 +73,23 @@
 }
 
 /* ==========================================================
-   Module grid (2 columns)
+   Module settings table (native form-table)
    ========================================================== */
-.wpsh-wrapper form {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 20px;
-}
-
-.wpsh-wrapper form > p {
-	grid-column: 1 / -1;
-	margin-top: 10px;
-}
-
-/* ==========================================================
-   Module board
-   ========================================================== */
-.wpsh-card {
-	background: #ffffff;
-	border-radius: 6px;
-	border: 1px solid #dcdcde;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-}
-
-/* Header */
-.wpsh-card-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 14px 16px;
-	border-bottom: 1px solid #eee;
-	gap: 12px;
-}
-
-.wpsh-module-icon {
-	font-size: 20px;
-	width: 24px;
-	height: 24px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.wpsh-wrapper .form-table th .dashicons {
+	vertical-align: text-bottom;
+	margin-right: 4px;
 	color: #2271b1;
-	flex-shrink: 0;
 }
 
-.wpsh-card-title {
-	margin: 0;
-	font-size: 15px;
-	font-weight: 600;
-	color: #2271b1;
-	flex: 1;
-}
+/* Widen the label column for the plugin's longer module titles. Scoped to a
+   min-width matching WordPress core's own form-table breakpoint (see
+   wp-admin/css/forms.css, `@media screen and (max-width: 782px)`), so this
+   never fights core's `width: auto` stacked layout on narrow viewports. */
+@media screen and (min-width: 783px) {
 
-/* ==========================================================
-   Active / Inactive badge
-   ========================================================== */
-
-.wpsh-status-badge {
-	font-size: 11px;
-	font-weight: 600;
-	padding: 2px 6px;
-	border-radius: 999px;
-	min-width: 52px;
-	text-align: center;
-}
-
-/* Default state: Inactive */
-.wpsh-status-badge::before {
-	content: "Inactif";
-	color: #CF0707;
-	background-color: rgba(220, 50, 50, 0.1);
-	padding: 2px 6px;
-	border-radius: 999px;
-}
-
-/* Active if checkbox is checked */
-.wpsh-card:has(.wpsh-toggle-input:checked) .wpsh-status-badge::before {
-	content: "Actif";
-	color: #328F35;
-	background-color: rgba(76, 175, 80, 0.1);
-}
-
-/* Dynamic toggle text */
-.wpsh-toggle-text::before {
-	content: "Activer le module";
-}
-
-.wpsh-card:has(.wpsh-toggle-input:checked) .wpsh-toggle-text::before {
-	content: "Désactiver le module";
-}
-
-/* ==========================================================
-   Body
-   ========================================================== */
-.wpsh-card-body {
-	padding: 14px 16px;
-	flex-grow: 1;
-}
-
-.wpsh-card-short {
-	margin: 0 0 6px;
-	font-style: italic;
-	color: #646970;
-	font-size: 13px;
-}
-
-.wpsh-card-long {
-	margin: 0;
-	color: #1d2327;
-	font-size: 13px;
-	line-height: 1.5;
-}
-
-/* ==========================================================
-   Footer
-   ========================================================== */
-.wpsh-card-footer {
-	padding: 12px 16px;
-	border-top: 1px solid #eee;
-	background: #f6f7f7;
-	font-size: 13px;
-	border-bottom-right-radius: 6px;
-	border-bottom-left-radius: 6px;
-}
-
-/* ==========================================================
-   Toggle switch
-   ========================================================== */
-.wpsh-toggle-container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-}
-
-.wpsh-toggle-wrapper {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-}
-
-.wpsh-toggle-input {
-	position: absolute;
-	opacity: 0;
-	width: 0;
-	height: 0;
-}
-
-.wpsh-toggle-switch {
-	position: relative;
-	width: 44px;
-	height: 22px;
-	background-color: #dcdcde;
-	border-radius: 11px;
-	cursor: pointer;
-	transition: background-color 0.2s ease;
-	margin-right: 8px;
-}
-
-.wpsh-toggle-switch::after {
-	content: '';
-	position: absolute;
-	top: 3px;
-	left: 3px;
-	width: 16px;
-	height: 16px;
-	background: #fff;
-	border-radius: 50%;
-	transition: transform 0.2s ease;
-}
-
-.wpsh-toggle-input:checked + .wpsh-toggle-switch {
-	background-color: #2271b1;
-}
-
-.wpsh-toggle-input:checked + .wpsh-toggle-switch::after {
-	transform: translateX(22px);
-}
-
-/* Toggle text */
-.wpsh-toggle-text {
-	font-size: 13px;
-	color: #1d2327;
+	.wpsh-wrapper .form-table th {
+		width: 300px;
+	}
 }
 
 /* File name */
@@ -289,51 +97,4 @@
 	font-family: monospace;
 	color: #646970;
 	font-size: 12px;
-	margin-left: auto;
-}
-
-/* Notice hidden by default */
-.wpsh-save-notice {
-	display: none;
-	font-size: 11px;
-	color: #646970;
-	font-style: italic;
-	margin-left: 16px;
-}
-/* Notice visible as soon as a change is made */
-.wpsh-card:has(.wpsh-toggle-input:checked) .wpsh-save-notice {
-	display: inline;
-}
-
-/* Display as soon as modification */
-.wpsh-card:has(.wpsh-toggle-input:checked) .wpsh-save-notice,
-.wpsh-card:has(.wpsh-toggle-input:not(:checked)) .wpsh-save-notice {
-	display: inline;
-}
-
-
-/* ==========================================================
-   Responsive (1 column)
-   ========================================================== */
-@media (max-width: 1024px) {
-	.wpsh-wrapper form {
-		grid-template-columns: 1fr;
-	}
-
-	.wpsh-header-banner {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 16px;
-	}
-
-	.wpsh-header-banner-actions {
-		align-self: flex-end;
-		width: auto;
-	}
-
-	.wpsh-header-banner-actions .button {
-		width: auto !important;
-		min-width: auto !important;
-		max-width: none !important;
-	}
 }

@@ -12,9 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 /* ==========================================================
    Core block assets
    ========================================================== */
-/* Disable loading core block inline styles (05.07.2023)
+/*
 // via https://www.spacedmonkey.com/2023/06/29/improve-front-end-performance-with-just-one-line-of-php/
-// + via https://github.com/spacedmonkey/jonnyandtaylor/commit/dc2182c7f7fbbefe59afe515e9804185d6de2726
 */
 add_filter( 'should_load_separate_core_block_assets', '__return_false' );
 remove_theme_support( 'core-block-patterns' );
@@ -22,10 +21,17 @@ remove_theme_support( 'core-block-patterns' );
 /* ==========================================================
    Allow additional MIME types
    ========================================================== */
-/* Allow additional MIME types
-// Use 'text/plain' instead of 'application/json' for JSON because of a current Wordpress core bug
+/*
 // via https://mollychanel.com/blog/tech/web/how-to-upload-json-to-wordpress/#Edit-the-functions-file
+// Uses 'text/plain' instead of 'application/json' for JSON, working around a
+// WordPress core bug that would otherwise reject the upload.
 */
+/**
+ * Allows additional MIME types to be uploaded.
+ *
+ * @param array $types Allowed mime types.
+ * @return array
+ */
 function wpsh_media_add_upload_mimes( $types ) {
 	if ( current_user_can( 'administrator' ) ) {
 		$types['json'] = 'text/plain';
@@ -48,7 +54,7 @@ add_filter(
 		}
 		// Vérifie la version de WordPress si nécessaire
 		global $wp_version;
-		if ( $wp_version !== '4.7.1' ) {	
+		if ( $wp_version !== '4.7.1' ) {
 			return $data;
 		}
 
@@ -77,7 +83,11 @@ add_filter( 'upload_mimes', 'wpsh_media_allow_svg_mime' );
 /* ==========================================================
    Fix SVG preview in admin
    ========================================================== */
-
+/**
+ * Fixes the SVG attachment preview size in the admin media library.
+ *
+ * @return void
+ */
 function wpsh_media_fix_svg_admin_display() {
 	echo '<style type="text/css">
 		.attachment-266x266,
@@ -89,9 +99,9 @@ function wpsh_media_fix_svg_admin_display() {
 }
 add_action( 'admin_head', 'wpsh_media_fix_svg_admin_display' );
 
-
-////////////////////////////////////////////////////
-
+/* ==========================================================
+   Allow SVG and WebP uploads (alternative approach)
+   ========================================================== */
 /* Allow the import of SVG and WebP files
 // via https://capitainewp.io/autoriser-svg-webp-wordpress/
 // Hooks

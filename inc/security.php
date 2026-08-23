@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /* ==========================================================
    External HTTP requests hardening
    ========================================================== */
-/**
+/*
  * WordPress allows plugins and themes to perform outbound HTTP requests
  * (API calls, updates, external services).
  *
@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * - paypal.com, api.paypal.com //Paypal
  * - Email service providers
  * - CDN and external asset domains
- * 
+ *
  * IMPORTANT:
  * These constants MUST be defined in wp-config.php to be effective.
  * They cannot be reliably defined in a plugin or mu-plugin.
@@ -59,22 +59,22 @@ if ( ! defined( 'ABSPATH' ) ) {
  * - Staging or pre-production environments that should not reach external services
  * - Performance optimisation by limiting unnecessary outbound requests
  * - Websites handling sensitive data where outbound traffic must be controlled and audited
- *   
+ *
  * ⚠️ Use with caution: blocking external HTTP requests can disrupt
  *  WordPress core updates, plugin/theme updates, or third-party integrations
  * if required domains are not explicitly allowed.
- * 
+ *
  * Do not enable external request blocking blindly.
  * Before activating it, monitor your site’s outbound connections using tools
  * such as Query Monitor. Build your allowlist based on real, observed traffic
  * to avoid unintentionally breaking site functionality.
  * Never activate WP_HTTP_BLOCK_EXTERNAL in production without prior auditing.
  */
- 
+
 /* ==========================================================
    Remove the WordPress version in <head>
    ========================================================== */
-remove_action('wp_head', 'wp_generator');
+remove_action( 'wp_head', 'wp_generator' );
 
 /* ==========================================================
    Block file editing via admin
@@ -84,7 +84,7 @@ remove_action('wp_head', 'wp_generator');
 /* ==========================================================
    Add an administrator user in WordPress
    ========================================================== */
-/* 
+/*
 // via https://www.wpbeginner.com/wp-tutorials/25-extremely-useful-tricks-for-the-wordpress-functions-file/#adminuserftp
 
 function wpsh_admin_account(){

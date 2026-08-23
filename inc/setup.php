@@ -6,28 +6,34 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-  exit;
+	exit;
 }
 
 /* ==========================================================
- Control the Heartbeat API and adjust the frequency.
- ========================================================== */
-/**
-// (see Chrome console alert: Failed to load resource: the server responded with a status of 400 > wp-admin/admin-ajax.php)
+   Control the Heartbeat API and adjust the frequency
+   ========================================================== */
+/*
 // via https://www.wptechnic.com/how-to-disable-limit-wordpress-heartbeat/
-* @param array $settings Heartbeat settings.
-* @return array
 */
+/**
+ * Reduces the WordPress Heartbeat API frequency.
+ *
+ * Avoids a Chrome console warning ("Failed to load resource: the server
+ * responded with a status of 400 > wp-admin/admin-ajax.php") caused by the
+ * default 15-second interval.
+ *
+ * @param array $settings Heartbeat settings.
+ * @return array
+ */
 function wpsh_custom_heartbeat_frequency( $settings ) {
-  $settings['interval'] = 180; // Interval in seconds. Change the value to your desired frequency.
-  return $settings;
+	$settings['interval'] = 180; // Interval in seconds. Change the value to your desired frequency.
+	return $settings;
 }
 add_filter( 'heartbeat_settings', 'wpsh_custom_heartbeat_frequency' );
 
-
 /* ==========================================================
- Reset WordPress settings to default
- ========================================================== */
+   Reset WordPress settings to default
+   ========================================================== */
 /*
 // via https://tutoriels.lws.fr/wordpress/snippets-wordpress#30_Reinitialiser_les_parametres_par_defaut_de_WordPress_sur_votre_site
 function set_theme_defaults() {
