@@ -14,6 +14,7 @@
  * License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.fr.html
  * Text Domain: wp-sniphub
  * Domain Path: /languages
+ * Update URL: false
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
